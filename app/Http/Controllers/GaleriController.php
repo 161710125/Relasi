@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Session;
 use App\galeri;
 use Illuminate\Http\Request;
 
@@ -88,7 +88,7 @@ class GaleriController extends Controller
     {
         $this->validate($request, [
             'nama' => 'required',
-            'foto' => 'image|max:20048'
+            'foto' => 'required|max:20048'
         ]);
         $galeri = galeri::find($id);
         $galeri -> update($request->all());
@@ -109,7 +109,7 @@ class GaleriController extends Controller
         }
         Session::flash("flash_notification", [
         "level"=>"success",
-        "message"=>"Berhasil menyimpan $barang->type"
+        "message"=>"Berhasil menyimpan $galeri->nama"
         ]);
         return redirect()->route('galeri.index');
     }

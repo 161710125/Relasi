@@ -31,13 +31,13 @@
 				  	  <tr>
 				    	<td>{{ $no++ }}</td>
 				    	<td>{{ $data->nama }}</td>
-				    	<td>{{ $data->galeri->id_galeri }}</td>
+				    	<td><a href="" class="thumbnail">
+                            <img src="img/{{ $data->galeri->foto, $data->nama }}" style="max-height:150px;max-width:150px;margin-top:7px;"</td>
+				    	<td>{{ $data->merk }}</td>
 				    	<td>{{ $data->plat_no }}</td>
+				    	<td>{{ $data->kapasitas }}</td>
 				    	<td>{{ $data->tahun_kel }}</td>
 				    	<td>{{ $data->harga }}</td>
-				    	<td><div class="col-sm-3">
-                        <a href="" class="thumbnail">
-                            <img src="img/{{ $data->foto, $data->nama }}" style="max-height:150px;max-width:150px;margin-top:7px;"</td>
 						<td>
 							<a class="btn btn-warning" href="{{ route('mobil.edit',$data->id) }}">Ubah</a>
 						</td>
