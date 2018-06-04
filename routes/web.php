@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::resource('galeri','GaleriController');
+Route::resource('mobil','MobilController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+

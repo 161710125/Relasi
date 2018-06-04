@@ -14,7 +14,8 @@ class GaleriController extends Controller
      */
     public function index()
     {
-        //
+        $galeri = galeri::all();
+        return view('galeri.index',compact('galeri'));
     }
 
     /**
@@ -24,7 +25,7 @@ class GaleriController extends Controller
      */
     public function create()
     {
-        //
+        return view('galeri.create');
     }
 
     /**
@@ -35,7 +36,21 @@ class GaleriController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'nama' => 'required',
+            'foto' => 'image|max:20048'
+        ]);
+        $galeri = galeri::create($request->except('foto'));
+        if ($request->hasFile('foto')) {
+        $uploaded_logo = $request->file('foto');
+        $extension = $uploaded_logo->getClientOriginalExtension();
+        $filename = md5(time()) . '.' . $extension;
+        $destinationPath = public_path() . DIRECTORY_SEPARATOR . 'img';
+        $uploaded_logo->move($destinationPath, $filename);
+        $galeri->foto = $filename;
+        $galeri->save();
+        }
+        return redirect()->route('galeri.index');
     }
 
     /**
@@ -44,9 +59,10 @@ class GaleriController extends Controller
      * @param  \App\galeri  $galeri
      * @return \Illuminate\Http\Response
      */
-    public function show(galeri $galeri)
+    public function show($id)
     {
-        //
+        $galeri = galeri::findOrFail($id);
+        return view('galeri.show',compact('galeri'));
     }
 
     /**
@@ -55,9 +71,10 @@ class GaleriController extends Controller
      * @param  \App\galeri  $galeri
      * @return \Illuminate\Http\Response
      */
-    public function edit(galeri $galeri)
+    public function edit($id)
     {
-        //
+        $galeri = galeri::findOrFail($id);
+        return view('galeri.edit',compact('galeri'));
     }
 
     /**
@@ -67,9 +84,34 @@ class GaleriController extends Controller
      * @param  \App\galeri  $galeri
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, galeri $galeri)
+    public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'nama' => 'required',
+            'foto' => 'image|max:20048'
+        ]);
+        $galeri = galeri::find($id);
+        $galeri -> update($request->all());
+        // isi field gambar jika ada gambar yang diupload
+        if ($request->hasFile('foto')) {
+        // Mengambil file yang diupload
+        $uploaded_logo = $request->file('foto');
+        // mengambil extension file
+        $extension = $uploaded_logo->getClientOriginalExtension();
+        // membuat nama file random berikut extension
+        $filename = md5(time()) . '.' . $extension;
+        // menyimpan gambar ke folder public/img
+        $destinationPath = public_path() . DIRECTORY_SEPARATOR . 'img';
+        $uploaded_logo->move($destinationPath, $filename);
+        // mengisi field gambar di Galeri dengan filename yang baru dibuat
+        $galeri->foto = $filename;
+        $galeri->save();
+        }
+        Session::flash("flash_notification", [
+        "level"=>"success",
+        "message"=>"Berhasil menyimpan $barang->type"
+        ]);
+        return redirect()->route('galeri.index');
     }
 
     /**
@@ -78,8 +120,10 @@ class GaleriController extends Controller
      * @param  \App\galeri  $galeri
      * @return \Illuminate\Http\Response
      */
-    public function destroy(galeri $galeri)
+    public function destroy($id)
     {
-        //
+        $galeri = galeri::findOrFail($id);
+        $galeri->delete();
+        return redirect()->route('galeri.index');
     }
 }

@@ -18,4 +18,3 @@ class mobil extends Model
 		return $this->belongsTo('App\galeri', 'id_galeri');
 	}
 }
-}

@@ -88,15 +88,18 @@ class SupirController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-        $d = supir::findOrFail($id);
-        $supir->nama = $request->nama;
-        $supir->jenis_kelamin = $request->jenis_kelamin;
-        $supir->no_identitas = $request->no_identitas;
-        $supir->no_hp = $request->no_hp;
-        $supir->alamat = $request->alamat;
-        $supir->harga = $request->harga;
-        $supir->save();
+    {   
+        $this->validate($request, [
+            'nama' => 'required',
+            'jenis_kelamin'=>'required',
+            'no_identitas'=>'max:255|required',
+            'no_hp'=>'max:255|required',
+            'alamat'=>'max:255|required',
+            'harga'=>'max:255|integer'
+        ]);
+        $supir = supir::find($id);
+        $supir->update($request->all());
+        ]);
         return redirect()->route('supir.index');
     }
 

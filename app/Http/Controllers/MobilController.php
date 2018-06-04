@@ -14,7 +14,8 @@ class MobilController extends Controller
      */
     public function index()
     {
-        //
+        $mobil = mobil::all();
+        return view('mobil.index',compact('mobil'));
     }
 
     /**
@@ -24,7 +25,7 @@ class MobilController extends Controller
      */
     public function create()
     {
-        //
+        return view('mobil.create');
     }
 
     /**
@@ -35,7 +36,17 @@ class MobilController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'nama' => 'required',
+            'id_galeri'=>'required',
+            'merk'=>'max:255|required',
+            'plat_no'=>'max:255|required',
+            'kapasitas'=>'max:255|required',
+            'tahun_kel'=>'max:255|required',
+            'harga'=>'max:255|integer'
+        ]);
+        $mobil = mobil::create($request->all());
+        return redirect()->route('mobil.index');
     }
 
     /**
@@ -44,9 +55,10 @@ class MobilController extends Controller
      * @param  \App\mobil  $mobil
      * @return \Illuminate\Http\Response
      */
-    public function show(mobil $mobil)
+    public function show($id)
     {
-        //
+        $mobil = mobil::findOrFail($id);
+        return view('mobil.show',compact('mobil'));
     }
 
     /**
@@ -55,9 +67,10 @@ class MobilController extends Controller
      * @param  \App\mobil  $mobil
      * @return \Illuminate\Http\Response
      */
-    public function edit(mobil $mobil)
+    public function edit($id)
     {
-        //
+        $mobil = mobil::findOrFail($id);
+        return view('mobil.edit',compact('mobil'));
     }
 
     /**
@@ -67,9 +80,20 @@ class MobilController extends Controller
      * @param  \App\mobil  $mobil
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, mobil $mobil)
+    public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'nama' => 'required',
+            'id_galeri'=>'required',
+            'merk'=>'max:255|required',
+            'plat_no'=>'max:255|required',
+            'kapasitas'=>'max:255|required',
+            'tahun_kel'=>'max:255|required',
+            'harga'=>'max:255|integer'
+        ]);
+        $mobil = mobil::find($id);
+        $mobil->update($request->all());
+        return redirect()->route('mobil.index');
     }
 
     /**
@@ -78,8 +102,10 @@ class MobilController extends Controller
      * @param  \App\mobil  $mobil
      * @return \Illuminate\Http\Response
      */
-    public function destroy(mobil $mobil)
+    public function destroy($id)
     {
-        //
-    }
+    $mobil = mobil::findOrFail($id);
+    $mobil->delete();
+        return redirect()->route('mobil.index'); 
+}
 }
