@@ -85,14 +85,18 @@ class CustomerController extends Controller
      */
     public function update(Request $request, $id)
     {   
-        $this->validate($request, [
+        $this->validate($request,[
+            'nama' => 'required|max:255',
+            'alamat' => 'required|min:2',
+            'no_hp' => 'required|min:2',
+            'jenis_kelamin' => 'required|min:2'
+        ]);
         $customer = customer::findOrFail($id);
         $customer->nama = $request->nama;
         $customer->alamat = $request->alamat;
         $customer->no_hp = $request->no_hp;
         $customer->jenis_kelamin = $request->jenis_kelamin;
         $customer->save();
-        ]);
         return redirect()->route('customer.index');
 
     }

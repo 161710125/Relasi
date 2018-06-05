@@ -16,6 +16,9 @@ Route::get('/', function () {
 });
 Route::resource('galeri','GaleriController');
 Route::resource('mobil','MobilController');
+Route::resource('customer','CustomerController');
+Route::resource('supir','SupirController');
+Route::resource('booked','BookingController');
 
 Auth::routes();
 
