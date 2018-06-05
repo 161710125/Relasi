@@ -20,13 +20,18 @@
                             </span>
                         @endif
                     </div>
-                    <div class="form-group {{ $errors->has('id_galeri') ? ' has-error' : '' }}">
-                        <label class="control-label">Nama Bupati</label>    
-                        <input type="text" name="id_galeri" class="form-control"  required>
+                    <div class="form-group {{ $errors->has('id_galeri') ? 'has error' : '' }}">
+                        <label class="control-label">Foto</label>
+                        <select name="id_galeri" class="form-control">
+                            <option>Foto Id</option>
+                            @foreach($galeri as $data)
+                            <option value="{{ $data->id }}">{{ $data->foto }}</option>
+                            @endforeach
+                        </select>
                         @if ($errors->has('id_galeri'))
-                            <span class="help-block">
-                                <strong>{{ $errors->first('id_galeri') }}</strong>
-                            </span>
+                        <span class="help-block">
+                            <strong>{{ $errors->first('id_galeri') }}</strong>
+                        </span>
                         @endif
                     </div>
                     <div class="form-group {{ $errors->has('merk') ? ' has-error' : '' }}">
@@ -58,7 +63,7 @@
                     </div>
                     <div class="form-group {{ $errors->has('tahun_kel') ? ' has-error' : '' }}">
                         <label class="control-label">tahun_kel</label>   
-                        <input type="text" name="tahun_kel" class="form-control"  required>
+                        <input type="date" name="tahun_kel" class="form-control"  required>
                         @if ($errors->has('tahun_kel'))
                             <span class="help-block">
                                 <strong>{{ $errors->first('tahun_kel') }}</strong>

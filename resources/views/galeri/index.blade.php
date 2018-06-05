@@ -29,7 +29,7 @@
 				    	<td><div class="col-sm-3"></td>
 				    		<td>
                         <a href="" class="thumbnail">
-                            <img src="img/{{ $data->foto, $data->nama }}" style="max-height:150px;max-width:150px;margin-top:7px;" </td>
+                            <img src="img/{{ $data->foto, $data->nama }}" style="max-height:150px;max-width:150px;margin-top:7px;"/> </td>
 						<td>
 							<a class="btn btn-warning" href="{{ route('galeri.edit',$data->id) }}">Ubah</a>
 						</td>

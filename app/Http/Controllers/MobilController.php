@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\galeri;
 use App\mobil;
 use Illuminate\Http\Request;
 
@@ -25,7 +25,9 @@ class MobilController extends Controller
      */
     public function create()
     {
-        return view('mobil.create');
+        $galeri = galeri::all();
+        return view('mobil.create', compact('galeri'));
+        
     }
 
     /**
@@ -43,7 +45,7 @@ class MobilController extends Controller
             'plat_no'=>'max:255|required',
             'kapasitas'=>'max:255|required',
             'tahun_kel'=>'max:255|required',
-            'harga'=>'max:255|integer'
+            'harga'=>'integer'
         ]);
         $mobil = mobil::create($request->all());
         return redirect()->route('mobil.index');
@@ -84,12 +86,11 @@ class MobilController extends Controller
     {
         $this->validate($request, [
             'nama' => 'required',
-            'id_galeri'=>'required',
             'merk'=>'max:255|required',
             'plat_no'=>'max:255|required',
             'kapasitas'=>'max:255|required',
             'tahun_kel'=>'max:255|required',
-            'harga'=>'max:255|integer'
+            'harga'=>'integer'
         ]);
         $mobil = mobil::find($id);
         $mobil->update($request->all());

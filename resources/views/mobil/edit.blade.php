@@ -22,16 +22,6 @@
                         @endif
                     </div>
 
-                    <div class="form-group {{ $errors->has('id_galeri') ? ' has-error' : '' }}">
-                        <label class="control-label">id_galeri</label>   
-                        <input type="file" name="id_galeri" class="form-control" value="{{ $mobil->id_galeri }}"  required>
-                        @if ($errors->has('id_galeri'))
-                            <span class="help-block">
-                                <strong>{{ $errors->first('id_galeri') }}</strong>
-                            </span>
-                        @endif
-                    </div>
-
                     <div class="form-group {{ $errors->has('merk') ? ' has-error' : '' }}">
                         <label class="control-label">merk</label>   
                         <input type="text" name="merk" class="form-control" value="{{ $mobil->merk }}"  required>
