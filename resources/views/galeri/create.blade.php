@@ -14,7 +14,7 @@
             <h3>Gambar</h3>
             <hr>
  
-    <form action="{{ url('galeri') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('galeri.store') }}" method="POST" enctype="multipart/form-data">
         {!! csrf_field() !!}
  
                 <div class="form-group">

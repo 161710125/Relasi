@@ -12,19 +12,19 @@
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="/admin/galeri">Galeri</a>
+                                    <a href="galeri">Galeri</a>
                                 </li>
                                 <li>
-                                    <a href="/admin/mobil">Mobil</a>
+                                    <a href="mobil">Mobil</a>
                                 </li>
                                 <li>
-                                    <a href="/admin/customer">Customer</a>
+                                    <a href="customer">Customer</a>
                                 </li>
                                 <li>
-                                    <a href="/admin/supir">Supir</a>
+                                    <a href="supir">Supir</a>
                                 </li>
                                 <li>
-                                    <a href="/admin/booking">Booked</a>
+                                    <a href="booking">Booked</a>
                                 </li>
                             </ul>
                         </li>

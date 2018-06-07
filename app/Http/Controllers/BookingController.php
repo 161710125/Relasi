@@ -43,8 +43,7 @@ class BookingController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'nama' => 'required',
-            'id_customer'=>'min:4|required',
+            'id_customer'=>'required',
             'id_mobil'=>'required',
             'id_supir'=>'required',
             'tgl_pinjam'=>'required',
@@ -94,7 +93,6 @@ class BookingController extends Controller
     public function update(Request $request, booking $booking)
     {
         $this->validate($request, [
-            'nama' => 'required',
             'id_customer'=>'min:4|required',
             'id_mobil'=>'required',
             'id_supir'=>'required',
