@@ -40,10 +40,10 @@ class CustomerController extends Controller
             'nama' => 'required|max:255',
             'alamat' => 'required|min:2',
             'no_hp' => 'required|min:2',
-            'jenis_kelamin' => 'required|min:2'
+            'jenis_kelamin' => 'min:2'
         ]);
 
-        $supir = new kabupaten;
+        $supir = new customer;
         $supir->nama = $request->nama;
         $supir->alamat = $request->alamat;
         $supir->no_hp = $request->no_hp;

@@ -12,7 +12,7 @@ class mobil extends Model
 
     
     public function booking() {
-		return $this->hasOne('App\booking');
+		return $this->hasOne('App\booking','id_mobil');
 	}
 	public function galeri() {
 		return $this->belongsTo('App\galeri', 'id_galeri');

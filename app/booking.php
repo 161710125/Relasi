@@ -11,11 +11,11 @@ class booking extends Model
 
 
 		public function customer() {
-		return $this->belongsToMany('App\customer', 'id_customer');
+		return $this->belongsTo('App\customer', 'id_customer');
 	}
 
 	public function mobil() {
-		return $this->belongsToMany('App\mobil', 'id_mobil');
+		return $this->belongsTo('App\mobil', 'id_mobil');
 	}
 
 	public function supir() {

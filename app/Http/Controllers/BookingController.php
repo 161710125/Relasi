@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\customer;
+use App\mobil;
+use App\supir;
 use App\booking;
 use Illuminate\Http\Request;
 
@@ -14,8 +16,8 @@ class BookingController extends Controller
      */
     public function index()
     {
-        $book  = booking::all();
-        return View('booked.index', compact('booked'));
+        $booking= booking::all();
+        return view('booking.index', compact('booking'));
     }
 
     /**
@@ -25,7 +27,11 @@ class BookingController extends Controller
      */
     public function create()
     {
-        return view('booked.create');
+        $customer = customer::all();
+        $mobil = mobil::all();
+        $supir = supir::all();
+        $booking = booking::all();
+        return view('booking.create',compact('customer','mobil','supir','booking'));
     }
 
     /**
@@ -36,24 +42,16 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
-            'nama' => 'required|max:255',
-            'jenis_kelamin' => 'required|min:2',
-            'no_identitas' => 'required|min:2',
-            'no_hp' => 'required|min:2',
-            'alamat' => 'required|min:2',
-            'harga' => 'required|min:2'
+        $this->validate($request, [
+            'nama' => 'required',
+            'id_customer'=>'min:4|required',
+            'id_mobil'=>'required',
+            'id_supir'=>'required',
+            'tgl_pinjam'=>'required',
+            'tgl_kembali'=>'required'
         ]);
-
-        $supir = new kabupaten;
-        $supir->nama = $request->nama;
-        $supir->jenis_kelamin = $request->jenis_kelamin;
-        $supir->no_identitas = $request->no_identitas;
-        $supir->no_hp = $request->no_hp;
-        $supir->alamat = $request->alamat;
-        $supir->harga = $request->harga;
-        $supir->save();
-        return redirect()->route('w.index');
+        $booking = booking::create($request->all());
+        return redirect()->route('booking.index');
     }
 
     /**
@@ -64,7 +62,8 @@ class BookingController extends Controller
      */
     public function show(booking $booking)
     {
-        //
+        $booking = booking::findOrFail($id);
+        return view('booking.show',compact('booking'));
     }
 
     /**
@@ -73,9 +72,16 @@ class BookingController extends Controller
      * @param  \App\booking  $booking
      * @return \Illuminate\Http\Response
      */
-    public function edit(booking $booking)
+    public function edit($id)
     {
-        //
+        $booking = booking::findOrFail($id);
+        $customer = customer::all();
+        $customerselect = customer::findOrFail($id)->id_customer; 
+        $mobil = mobil::all();
+        $mobilselect = mobil::findOrFail($id)->id_mobil;
+        $supir = supir::all();
+        $supirselect = supir::findOrFail($id)->id_supir;
+        return view('booking.edit',compact('booking','customer','customerselect','mobil','mobilselect','supir','supirselect'));
     }
 
     /**
@@ -87,7 +93,17 @@ class BookingController extends Controller
      */
     public function update(Request $request, booking $booking)
     {
-        //
+        $this->validate($request, [
+            'nama' => 'required',
+            'id_customer'=>'min:4|required',
+            'id_mobil'=>'required',
+            'id_supir'=>'required',
+            'tgl_pinjam'=>'required',
+            'tgl_kembali'=>'required'
+        ]);
+        $booking = booking::find($id);
+        $booking->update($request->all());
+        return redirect()->route('booking.index');
     }
 
     /**
@@ -98,6 +114,8 @@ class BookingController extends Controller
      */
     public function destroy(booking $booking)
     {
-        //
+        $booking =booking::findOrFail($id);
+        $booking->delete();
+        return redirect()->route('booking.index');
     }
 }

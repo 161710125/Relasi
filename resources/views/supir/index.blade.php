@@ -5,8 +5,8 @@
 	<div class="container">
 		<div class="col-md-12">
 			<div class="panel panel-primary">
-			  <div class="panel-heading">Data Keterangan Mobil
-			  	<div class="panel-title pull-right"><a href="{{ route('mobil.create') }}">Tambah</a>
+			  <div class="panel-heading">Supir
+			  	<div class="panel-title pull-right"><a href="{{ route('supir.create') }}">Tambah</a>
 			  	</div>
 			  </div>
 			  <div class="panel-body">
@@ -16,33 +16,30 @@
 			  		<tr>
 			  		  <th>No</th>
 					  <th>Nama</th>
-					  <th>ID Galeri</th>
-					  <th>Merk</th>
-					  <th>Plat Nomor</th>
-					  <th>Kapasitas</th>
-					  <th>Tahun Keluaran</th>
+					  <th>Jenis Kelamin</th>
+					  <th>No Identitas</th>
+					  <th>Nomor Handphone</th>
+					  <th>Alamat</th>
 					  <th>Harga</th>
-					  <th colspan="3">Option</th>
+					  <th colspan="2">Option</th>
 			  		</tr>
 				  	</thead>
 				  	<tbody>
 				  		@php $no = 1; @endphp
-				  		@foreach($mobil as $data)
+				  		@foreach($supir as $data)
 				  	  <tr>
 				    	<td>{{ $no++ }}</td>
 				    	<td>{{ $data->nama }}</td>
-				    	<td><a href="" class="thumbnail">
-                            <img src="../img/{{ $data->galeri->foto }}" style="max-height:150px;max-width:150px;margin-top:7px;"</td>
-				    	<td>{{ $data->merk }}</td>
-				    	<td>{{ $data->plat_no }}</td>
-				    	<td>{{ $data->kapasitas }}</td>
-				    	<td>{{ $data->tahun_kel }}</td>
+				    	<td>{{ $data->jenis_kelamin }}</td>
+				    	<td>{{ $data->no_identitas }}</td>
+				    	<td>{{ $data->no_hp }}</td>
+				    	<td>{{ $data->alamat }}</td>
 				    	<td>{{ $data->harga }}</td>
-						<td>
-							<a class="btn btn-warning" href="{{ route('mobil.edit',$data->id) }}">Ubah</a>
+				    	<td>
+							<a class="btn btn-warning" href="{{ route('supir.edit',$data->id) }}">Ubah</a>
 						</td>
 						<td>
-							<form method="post" action="{{ route('mobil.destroy',$data->id) }}">
+							<form method="post" action="{{ route('supir.destroy',$data->id) }}">
 								<input name="_token" type="hidden" value="{{ csrf_token() }}">
 								<input type="hidden" name="_method" value="DELETE">
 

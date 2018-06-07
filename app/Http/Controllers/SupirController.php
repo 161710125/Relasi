@@ -25,7 +25,7 @@ class SupirController extends Controller
      */
     public function create()
     {
-        return view('booked.create');
+        return view('supir.create');
     }
 
     /**
@@ -95,11 +95,10 @@ class SupirController extends Controller
             'no_identitas'=>'max:255|required',
             'no_hp'=>'max:255|required',
             'alamat'=>'max:255|required',
-            'harga'=>'max:255|integer'
+            'harga'=>'integer'
         ]);
         $supir = supir::find($id);
         $supir->update($request->all());
-        ]);
         return redirect()->route('supir.index');
     }
 

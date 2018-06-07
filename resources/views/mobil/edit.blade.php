@@ -4,7 +4,7 @@
     <div class="container">
         <div class="col-md-12">
             <div class="panel panel-primary">
-              <div class="panel-heading">Edit Data mobil 
+              <div class="panel-heading">Edit Data {{ $mobil->nama }} 
                 <div class="panel-title pull-right"><a href="{{ url()->previous() }}">Kembali</a>
                 </div>
               </div>
@@ -74,7 +74,7 @@
 
                     
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Tambah</button>
+                        <button type="submit" class="btn btn-primary">Edit</button>
                     </div>
                 </form>
               </div>

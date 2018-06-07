@@ -14,13 +14,13 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Auth::routes();
+Route::group(['prefix'=>'admin','middleware'=>['auth','role:admin']], function(){
+Route::get('/', 'GaleriController@index')->name('index');
 Route::resource('galeri','GaleriController');
 Route::resource('mobil','MobilController');
 Route::resource('customer','CustomerController');
 Route::resource('supir','SupirController');
-Route::resource('booked','BookingController');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('booking','BookingController');
+});
 
