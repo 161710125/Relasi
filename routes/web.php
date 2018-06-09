@@ -24,3 +24,6 @@ Route::resource('supir','SupirController');
 Route::resource('booking','BookingController');
 });
 
+Route::group(['prefix'=>'member','middleware'=>['auth','role:member']], function(){
+Route::resource('/','HomeController');
+});

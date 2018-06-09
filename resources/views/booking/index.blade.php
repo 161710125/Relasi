@@ -16,6 +16,7 @@
 			  		<tr>
 			  		  <th>No</th>
 					  <th>Customer</th>
+					  <th>Jenis</th>
 					  <th>Mobil</th>
 					  <th>Supir</th>
 					  <th>Tanggal Pinjam</th>
@@ -29,6 +30,7 @@
 				  	  <tr>
 				    	<td>{{ $no++ }}</td>
 				    	<td>{{ $data->customer->nama}}</td>
+				    	<td>{{ $data->customer->jenis_kelamin}}</td>
 						<td>{{ $data->mobil->nama}}</td>
 						<td>{{ $data->supir->nama}}</td>
 						<td>{{ $data->tgl_pinjam}}</td>

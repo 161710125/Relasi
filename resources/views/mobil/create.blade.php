@@ -23,9 +23,9 @@
                     <div class="form-group {{ $errors->has('id_galeri') ? 'has error' : '' }}">
                         <label class="control-label">Foto</label>
                         <select name="id_galeri" class="form-control">
-                            <option>Foto Id</option>
+                            <option>Pilih Foto</option>
                             @foreach($galeri as $data)
-                            <option value="{{ $data->id }}">{{ $data->foto }}</option>
+                            <option value="{{ $data->id }}">{{ $data->nama }}</option>
                             @endforeach
                         </select>
                         @if ($errors->has('id_galeri'))
@@ -35,7 +35,7 @@
                         @endif
                     </div>
                     <div class="form-group {{ $errors->has('merk') ? ' has-error' : '' }}">
-                        <label class="control-label">merk</label>   
+                        <label class="control-label">Merk</label>   
                         <input type="text" name="merk" class="form-control"  required>
                         @if ($errors->has('merk'))
                             <span class="help-block">
@@ -44,7 +44,7 @@
                         @endif
                     </div>
                     <div class="form-group {{ $errors->has('plat_no') ? ' has-error' : '' }}">
-                        <label class="control-label">plat_no</label>  
+                        <label class="control-label">Plat Nomor</label>  
                         <input type="text" name="plat_no" class="form-control"  required>
                         @if ($errors->has('plat_no'))
                             <span class="help-block">
@@ -53,7 +53,7 @@
                         @endif
                     </div>
                     <div class="form-group {{ $errors->has('kapasitas') ? ' has-error' : '' }}">
-                        <label class="control-label">kapasitas</label>   
+                        <label class="control-label">Kapasitas</label>   
                         <input type="text" name="kapasitas" class="form-control"  required>
                         @if ($errors->has('kapasitas'))
                             <span class="help-block">
@@ -62,7 +62,7 @@
                         @endif
                     </div>
                     <div class="form-group {{ $errors->has('tahun_kel') ? ' has-error' : '' }}">
-                        <label class="control-label">tahun_kel</label>   
+                        <label class="control-label">Tahun Keluaran</label>   
                         <input type="date" name="tahun_kel" class="form-control"  required>
                         @if ($errors->has('tahun_kel'))
                             <span class="help-block">
@@ -71,7 +71,7 @@
                         @endif
                     </div>
                     <div class="form-group {{ $errors->has('harga') ? ' has-error' : '' }}">
-                        <label class="control-label">harga</label>   
+                        <label class="control-label">Harga</label>   
                         <input type="text" name="harga" class="form-control"  required>
                         @if ($errors->has('harga'))
                             <span class="help-block">

@@ -33,6 +33,6 @@ class HomeController extends Controller
 }
     protected function memberDashboard()
 {
-    return view('dashboard.member');
+    return view('home');
 }
 }

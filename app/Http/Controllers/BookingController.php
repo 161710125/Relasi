@@ -71,15 +71,15 @@ class BookingController extends Controller
      * @param  \App\booking  $booking
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(booking $booking)
     {
-        $booking = booking::findOrFail($id);
+        $booking = booking::findOrFail($booking->id);
         $customer = customer::all();
-        $customerselect = customer::findOrFail($id)->id_customer; 
+        $customerselect = booking::findOrFail($booking->id)->id_customer; 
         $mobil = mobil::all();
-        $mobilselect = mobil::findOrFail($id)->id_mobil;
+        $mobilselect = booking::findOrFail($booking->id)->id_mobil;
         $supir = supir::all();
-        $supirselect = supir::findOrFail($id)->id_supir;
+        $supirselect = booking::findOrFail($booking->id)->id_supir;
         return view('booking.edit',compact('booking','customer','customerselect','mobil','mobilselect','supir','supirselect'));
     }
 

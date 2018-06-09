@@ -13,7 +13,7 @@
 			  		<input name="_method" type="hidden" value="PATCH">
         			{{ csrf_field() }}
 			  		<div class="form-group {{ $errors->has('nama') ? ' has-error' : '' }}">
-			  			<label class="control-label">nama</label>	
+			  			<label class="control-label">Nama</label>	
 			  			<input type="text" name="nama" class="form-control" value="{{ $galeri->nama }}"  required>
 			  			@if ($errors->has('nama'))
                             <span class="help-block">
@@ -23,7 +23,7 @@
 			  		</div>
 
 			  		<div class="form-group {{ $errors->has('foto') ? ' has-error' : '' }}">
-			  			<label class="control-label">foto</label>	
+			  			<label class="control-label">Foto</label>	
 			  			<input type="file" name="foto" class="form-control" value="{{ $galeri->foto }}"  required>
 			  			@if ($errors->has('foto'))
                             <span class="help-block">

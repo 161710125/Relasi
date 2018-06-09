@@ -24,10 +24,10 @@
  
                 <div class="form-group">
                     <label for="foto">Gambar</label>
-                    <input type="file" id="foto" name="foto">
+                    <input type="file" id="foto" name="foto" accept="image/*">
                 </div>
  
-                <input class="btn btn-primary" type="submit" value="Upload">
+                <input class="btn btn-primary" type="submit" value="Upload" <span class="glyphicon glyphicon-ok">
             </form>
  
         @if(count($errors) > 0)
