@@ -15,8 +15,9 @@
 				  	<thead>
 			  		<tr>
 			  		  <th>No</th>
-					  <th>Customer</th>
-					  <th>Jenis</th>
+					  <th>Nama</th>
+					  <th>Alamat</th>
+					  <th>Identitas</th>
 					  <th>Mobil</th>
 					  <th>Supir</th>
 					  <th>Tanggal Pinjam</th>
@@ -29,8 +30,10 @@
 				  		@foreach($booking as $data)
 				  	  <tr>
 				    	<td>{{ $no++ }}</td>
-				    	<td>{{ $data->customer->nama}}</td>
-				    	<td>{{ $data->customer->jenis_kelamin}}</td>
+				    	<td>{{ $data->nama_p}} {{ $data->nama_a}}</td>
+				    	<td>{{ $data->no_hp}}</td>
+				    	<td>{{ $data->alamat}}</td>
+				    	<td>{{ $data->identitas}}</td>
 						<td>{{ $data->mobil->nama}}</td>
 						<td>{{ $data->supir->nama}}</td>
 						<td>{{ $data->tgl_pinjam}}</td>

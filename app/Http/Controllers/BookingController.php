@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\customer;
 use App\mobil;
 use App\supir;
 use App\booking;
@@ -27,11 +26,10 @@ class BookingController extends Controller
      */
     public function create()
     {
-        $customer = customer::all();
         $mobil = mobil::all();
         $supir = supir::all();
         $booking = booking::all();
-        return view('booking.create',compact('customer','mobil','supir','booking'));
+        return view('booking.create',compact('mobil','supir','booking'));
     }
 
     /**
@@ -43,11 +41,17 @@ class BookingController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'id_customer'=>'required',
-            'id_mobil'=>'required',
-            'id_supir'=>'required',
-            'tgl_pinjam'=>'required',
-            'tgl_kembali'=>'required'
+            'nama_p' => 'required',
+            'nama_a' => 'required',
+            'no_hp' => 'required',
+            'alamat' => 'required',
+            'jemput_p' => 'required',
+            'jemput_a' => 'required',
+            'identitas' => 'required',
+            'id_mobil' => '',
+            'id_supir' => '',
+            'tgl_pinjam' => 'required',
+            'tgl_kembali' => 'required'
         ]);
         $booking = booking::create($request->all());
         return redirect()->route('booking.index');
@@ -74,13 +78,11 @@ class BookingController extends Controller
     public function edit(booking $booking)
     {
         $booking = booking::findOrFail($booking->id);
-        $customer = customer::all();
-        $customerselect = booking::findOrFail($booking->id)->id_customer; 
         $mobil = mobil::all();
         $mobilselect = booking::findOrFail($booking->id)->id_mobil;
         $supir = supir::all();
         $supirselect = booking::findOrFail($booking->id)->id_supir;
-        return view('booking.edit',compact('booking','customer','customerselect','mobil','mobilselect','supir','supirselect'));
+        return view('booking.edit',compact('booking','mobil','mobilselect','supir','supirselect'));
     }
 
     /**
@@ -93,7 +95,11 @@ class BookingController extends Controller
     public function update(Request $request, booking $booking)
     {
         $this->validate($request, [
-            'id_customer'=>'min:4|required',
+            'nama_p'=>'required',
+            'nama_a'=>'required',
+            'no_hp'=>'required',
+            'alamat'=>'required',
+            'identitas'=>'required',
             'id_mobil'=>'required',
             'id_supir'=>'required',
             'tgl_pinjam'=>'required',

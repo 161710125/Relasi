@@ -11,19 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::resource('front','FrontendController');
 Auth::routes();
 Route::group(['prefix'=>'admin','middleware'=>['auth','role:admin']], function(){
 Route::get('/', 'GaleriController@index')->name('index');
 Route::resource('galeri','GaleriController');
 Route::resource('mobil','MobilController');
-Route::resource('customer','CustomerController');
 Route::resource('supir','SupirController');
-
-});
-
-Route::group(['prefix'=>'member','middleware'=>['auth','role:member']], function(){
 Route::resource('booking','BookingController');
 });
+

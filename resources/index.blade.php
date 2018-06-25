@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+
+<!-- Mirrored from carrental.themeinjection.com/theme/index.php by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 18 Jun 2018 04:21:45 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Momobilan</title>
+  <title>Car|Rental Landingpage</title>
 
   <!-- Bootstrap -->
   <link href="{{ asset('assets/theme/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -60,7 +62,7 @@
           <div class="col-md-5">
               <!-- Logo start -->
               <div class="brand">
-                  <h1><a class="scroll-to" href="#top"><img class="img-responsive"  src="{{ asset('assets/theme/img/logo.gif') }}" alt="Car|Rental"></a></h1>
+                  <h1><a class="scroll-to" href="#top"><img class="img-responsive" src="{{ asset('assets/theme/img/logo.gif') }}" alt="Car|Rental"></a></h1>
               </div>
               <!-- Logo end -->
           </div>
@@ -69,6 +71,18 @@
               <div class="pull-right">
                   <div class="header-info pull-right">
                       <div class="contact pull-left">CONTACT: (562) 498-4600</div>
+                      <!-- Language Switch start -->
+                      <div class="language-switch pull-right">
+                          <div class="dropdown">
+                              <a data-toggle="dropdown" href="#" id="language-switch-dropdown">Select your language </a>
+                              <ul class="dropdown-menu" role="menu" aria-labelledby="language-switch-dropdown">
+                                  <li><a href="#"><img src="{{ asset('assets/theme/img/flags/United-States.png') }}" alt="usa"> English</a></li>
+                                  <li><a href="#"><img src="{{ asset('assets/theme/img/flags/Germany.png') }}" alt="germany"> German</a></li>
+                                  <li><a href="#"><img src="{{ asset('assets/theme/img/flags/France.png') }}" alt="france"> French</a></li>
+                              </ul>
+                          </div>
+                      </div>
+                      <!-- Language Switch end -->
                   </div>
               </div>
 
@@ -94,6 +108,14 @@
                               <li class="active"><a href="#top" class="scroll-to">Home</a></li>
                               <li><a href="#services" class="scroll-to">Services</a></li>
                               <li><a href="#vehicles" class="scroll-to">Vehicle Models</a></li>
+                              <li class="dropdown">
+                                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Blog <span class="caret"></span></a>
+                                  <ul class="dropdown-menu" role="menu">
+                                      <li><a href="blog-posts.html">Blog Posts</a></li>
+                                      <li><a href="blog-single-post.html">Blog Single Post</a></li>
+                                      <li><a href="error404.html">Error 404</a></li>
+                                  </ul>
+                              </li>
                               <li><a href="#locations" class="scroll-to">Locations</a></li>
                               <li><a href="#contact" class="scroll-to">Contact</a></li>
                           </ul>
@@ -193,6 +215,60 @@
                         <div class="input-group">
                           <span class="input-group-addon pixelfix"><span class="glyphicon glyphicon-calendar"></span> Pick-up</span>
                           <input type="text" readonly="true" name="pick-up-date" id="pick-up-date" class="form-control datepicker" placeholder="mm/dd/yyyy">
+                        </div>
+                      </div>
+                      <div class="time pull-right">
+                        <div class="styled-select-time">
+                          <select name="pick-up-time" id="pick-up-time">
+                            <option value="12:00 AM">12:00 AM</option>
+                            <option value="12:30 AM">12:30 AM</option>
+                            <option value="01:00 AM">01:00 AM</option>
+                            <option value="01:30 AM">01:30 AM</option>
+                            <option value="02:00 AM">02:00 AM</option>
+                            <option value="02:30 AM">02:30 AM</option>
+                            <option value="03:00 AM">03:00 AM</option>
+                            <option value="03:30 AM">03:30 AM</option>
+                            <option value="04:00 AM">04:00 AM</option>
+                            <option value="04:30 AM">04:30 AM</option>
+                            <option value="05:00 AM">05:00 AM</option>
+                            <option value="05:30 AM">05:30 AM</option>
+                            <option value="06:00 AM">06:00 AM</option>
+                            <option value="06:30 AM">06:30 AM</option>
+                            <option value="07:00 AM">07:00 AM</option>
+                            <option value="07:30 AM">07:30 AM</option>
+                            <option value="08:00 AM">08:00 AM</option>
+                            <option value="08:30 AM">08:30 AM</option>
+                            <option value="09:00 AM">09:00 AM</option>
+                            <option value="09:30 AM">09:30 AM</option>
+                            <option value="10:00 AM">10:00 AM</option>
+                            <option value="10:30 AM">10:30 AM</option>
+                            <option value="11:00 AM">11:00 AM</option>
+                            <option value="11:30 AM">11:30 AM</option>
+                            <option value="12:00 PM">12:00 PM</option>
+                            <option value="12:30 PM">12:30 PM</option>
+                            <option value="01:00 PM">01:00 PM</option>
+                            <option value="01:30 PM">01:30 PM</option>
+                            <option value="02:00 PM">02:00 PM</option>
+                            <option value="02:30 PM">02:30 PM</option>
+                            <option value="03:00 PM">03:00 PM</option>
+                            <option value="03:30 PM">03:30 PM</option>
+                            <option value="04:00 PM">04:00 PM</option>
+                            <option value="04:30 PM">04:30 PM</option>
+                            <option value="05:00 PM">05:00 PM</option>
+                            <option value="05:30 PM">05:30 PM</option>
+                            <option value="06:00 PM">06:00 PM</option>
+                            <option value="06:30 PM">06:30 PM</option>
+                            <option value="07:00 PM">07:00 PM</option>
+                            <option value="07:30 PM">07:30 PM</option>
+                            <option value="08:00 PM">08:00 PM</option>
+                            <option value="08:30 PM">08:30 PM</option>
+                            <option value="09:00 PM">09:00 PM</option>
+                            <option value="09:30 PM">09:30 PM</option>
+                            <option value="10:00 PM">10:00 PM</option>
+                            <option value="10:30 PM">10:30 PM</option>
+                            <option value="11:00 PM">11:00 PM</option>
+                            <option value="11:30 PM">11:30 PM</option>
+                          </select>
                         </div>
                       </div>
                       <div class="clearfix"></div>
@@ -334,6 +410,46 @@
           </div>
         </section>
         <!-- Services end -->
+
+
+
+        <!-- Newsletter start -->
+        <section id="newsletter" class="wow slideInLeft" data-wow-offset="300">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12"><div class="alert hidden" id="newsletter-form-msg"></div></div>
+              <div class="col-md-5 col-xs-12">
+                <h2 class="title">Sign up for amazing offers
+                  <span class="subtitle">exclusive access for offers and promotions</span></h2>
+                </div>
+                <div class="col-md-7">
+                  <div class="newsletter-form pull-left">
+                    <form action="#" method="post" name="newsletter-form" id="newsletter-form">
+                        <input type="hidden" name="action" value="send_newsletter_form"/>
+                        <input type="text" class="website_hp" name="website_hp"/>
+                      <div class="input-group">
+                        <input type="email" name="newsletter-email" class="form-control" placeholder="Enter your Email Address">
+                        <span class="input-group-btn">
+                          <input class="btn btn-default button" type="submit" value="send">
+                        </span>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="social-icons pull-right">
+                    <ul>
+                      <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                      <li><a class="googleplus" href="#"><i class="fa fa-google-plus"></i></a></li>
+                      <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                    </ul>
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Newsletter end -->
+
+
 
           <!-- Vehicles start -->
           <section id="vehicles" class="container">
@@ -961,6 +1077,77 @@
         </section>
         <!-- Locations end -->
 
+
+
+        <!-- Information start -->
+        <section id="information" class="container">
+
+          <!-- Single photo start -->
+          <div class="row wow fadeInLeft" data-wow-offset="100">
+            <div class="col-md-6 col-xs-12 pull-right">
+              <img src="img/info-img.jpg" alt="Info Img" class="img-responsive">
+            </div>
+            <div class="col-md-6 pull-left">
+              <h2 class="title">Quality Guaranteed</h2>
+              <h3 class="subtitle">Here is an example with one single photo displayed on the right.</h3>
+              <p>Here is some dummy text. <span class="my-tooltip" data-toggle="tooltip" title="" data-original-title="This is an demo tooltip!">Hover over me!</span> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, vero voluptas delectus explicabo maxime ad qui incidunt! Saepe.</p>
+              <a href="http://themeforest.net/item/car-rental-landing-page/8245093?ref=themeinjection" class="btn">More information</a>
+              <a href="http://themeforest.net/item/car-rental-landing-page/8245093?ref=themeinjection" class="btn btn-gray">Buy this theme</a>
+            </div>
+          </div>
+          <!-- Single photo end -->
+
+          <!-- Video start -->
+          <div class="row wow fadeInRight" data-wow-offset="50">
+            <div class="col-md-6">
+              <div class="video">
+                <!-- Youtube iframe start -->
+                <iframe width="420" height="315" src="http://www.youtube.com/embed/9_5pjZlWV3A?rel=0&amp;autoplay=0" allowfullscreen></iframe>
+                <!-- Youtube iframe end -->
+              </div>
+            </div>
+            <div class="col-md-6">
+              <h2 class="title">Watch our info tour</h2>
+              <h3 class="subtitle">You can also show youtube videos in this section!</h3>
+              <p>Here is some dummy text. Lorem ipsum dolor sit amet, <span class="label label-default">This is an labeled text snippet!</span>, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, vero voluptas delectus explicabo maxime ad qui incidunt! no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+            </div>
+          </div>
+          <!-- Video end -->
+
+        </section>
+        <!-- Information end -->
+
+
+
+        <!-- Partners start -->
+        <section id="partners" class="wow fadeIn" data-wow-offset="50">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 text-center">
+                <h2>Meet Our Partners</h2>
+                <span class="underline">&nbsp;</span>
+                <p>To contribute to positive change and achieve our sustainability goals, we partner with many extraordinary organizations around the world. Their expertise enables us to do far more than we could alone, and their passion and talent inspire us. It is our pleasure to introduce you to a handful of the organizations whose accomplishments and commitments are representative of all the organizations we are fortunate to call our partners.</p>
+              </div>
+              <div class="col-md-3 col-xs-6 text-center">
+                <img src="img/partner1.png" alt="Partner" class="img-responsive wow fadeInUp" data-wow-delay="0.5s" data-wow-offset="200">
+              </div>
+              <div class="col-md-3 col-xs-6 text-center">
+                <img src="img/partner2.png" alt="Partner" class="img-responsive wow fadeInUp" data-wow-delay="1s" data-wow-offset="200">
+              </div>
+              <div class="col-md-3 col-xs-6 text-center">
+                <img src="img/partner3.png" alt="Partner" class="img-responsive wow fadeInUp" data-wow-delay="1.5s" data-wow-offset="200">
+              </div>
+              <div class="col-md-3 col-xs-6 text-center">
+                <img src="img/partner4.png" alt="Partner" class="img-responsive wow fadeInUp" data-wow-delay="2s" data-wow-offset="200">
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Partners end -->
+
+
+
         <!-- Contact start -->
         <section id="contact" class="container wow bounceInUp" data-wow-offset="50">
           <div class="row">
@@ -970,6 +1157,7 @@
             <div class="col-md-4 col-xs-12 pull-right">
               <h4 class="contact-box-title">Customer Center</h4>
               <div class="contact-box">
+                <img src="img/contact-box-img1.jpg" alt="contact-img">
                 <div class="contact-box-name">Sarah Connor</div>
                 <div class="contact-box-phon"><span class="highlight">Phone:</span> 666-999-888</div>
                 <div class="contact-box-email"><span class="highlight">Email:</span> connor@example.com</div>
@@ -981,6 +1169,7 @@
 
               <h4 class="contact-box-title">Change or Cancel Reservation</h4>
               <div class="contact-box">
+                <img src="img/contact-box-img2.jpg" alt="contact-img">
                 <div class="contact-box-name">Mike Smith</div>
                 <div class="contact-box-phon"><span class="highlight">Phone:</span> 666-999-888</div>
                 <div class="contact-box-email"><span class="highlight">Email:</span> connor@example.com</div>
@@ -989,6 +1178,7 @@
               <div class="contact-box-border">&nbsp;</div>
 
               <div class="contact-box">
+                <img src="img/contact-box-img3.jpg" alt="contact-img">
                 <div class="contact-box-name">Jane Doe</div>
                 <div class="contact-box-phon"><span class="highlight">Phone:</span> 666-999-888</div>
                 <div class="contact-box-email"><span class="highlight">Email:</span> connor@example.com</div>

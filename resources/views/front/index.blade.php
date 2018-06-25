@@ -149,6 +149,8 @@
                 <div class="reservation-form-shadow">
 
                   <form action="#" method="post" name="car-select-form" id="car-select-form">
+                    <!-- <form action="{{ route('front.store') }}" method="post" name="car-select-form" id="car-select-form">
+                    {{ csrf_field() }} -->
 
                     <div class="alert alert-danger hidden" id="car-select-form-msg">
                       <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
@@ -156,7 +158,7 @@
                     </div>
 
                     <!-- Car select start -->
-                    <div class="styled-select-car">
+                    <!-- <div class="styled-select-car">
                       <select name="car-select" id="car-select">
                         <option value="">Select your car type</option>
                         <option value="{{ asset('assets/theme/img/vehicle1.jpg') }}">VW Golf VII</option>
@@ -166,6 +168,19 @@
                         <option value="{{ asset('assets/theme/img/vehicle5.jpg') }}">Mercedes-Benz GLK</option>
                         <option value="{{ asset('assets/theme/img/vehicle6.jpg') }}">VW Passat CC</option>
                       </select>
+                    </div> -->
+                    <div class="styled-select-car">
+                        <select name="id_mobil" class="form-control">
+                            <option>Pilih Foto</option>
+                            @foreach($mobil as $data)
+                            <option value="{{ $data->id }}">{{ $data->nama }}</option>
+                            @endforeach
+                        </select>
+                        @if ($errors->has('id_mobil'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('id_mobil') }}</strong>
+                        </span>
+                        @endif
                     </div>
                     <!-- Car select end -->
 
@@ -173,7 +188,7 @@
                     <div class="location">
                       <div class="input-group pick-up">
                         <span class="input-group-addon"><span class="glyphicon glyphicon-map-marker"></span> Pick-up</span>
-                        <input type="text" name="pick-up-location" id="pick-up-location" class="form-control autocomplete-location" placeholder="Enter a City or Airport">
+                        <input type="text" name="jemput_p" id="pick-up-location" class="form-control autocomplete-location" placeholder="Enter a City or Airport">
                       </div>
                       <!-- Pick-up location end -->
 
@@ -182,7 +197,7 @@
                       <!-- Drop-off location start -->
                       <div class="input-group drop-off">
                         <span class="input-group-addon"><span class="glyphicon glyphicon-map-marker"></span> Drop-off</span>
-                        <input type="text" name="drop-off-location" id="drop-off-location" class="form-control autocomplete-location" placeholder="Enter a City or Airport">
+                        <input type="text" name="jemput_a" id="drop-off-location" class="form-control autocomplete-location" placeholder="Enter a City or Airport">
                       </div>
                     </div>
                     <!-- Drop-off location end -->
@@ -192,7 +207,7 @@
                       <div class="date pull-left">
                         <div class="input-group">
                           <span class="input-group-addon pixelfix"><span class="glyphicon glyphicon-calendar"></span> Pick-up</span>
-                          <input type="text" readonly="true" name="pick-up-date" id="pick-up-date" class="form-control datepicker" placeholder="mm/dd/yyyy">
+                          <input type="text" readonly="true" name="tgl_pinjam" id="pick-up-date" class="form-control datepicker" placeholder="mm/dd/yyyy">
                         </div>
                       </div>
                       <div class="clearfix"></div>
@@ -204,61 +219,7 @@
                       <div class="date pull-left">
                         <div class="input-group">
                           <span class="input-group-addon pixelfix"><span class="glyphicon glyphicon-calendar"></span> Drop-off</span>
-                          <input type="text" readonly="true" name="drop-off-date" id="drop-off-date" class="form-control datepicker" placeholder="mm/dd/yyyy">
-                        </div>
-                      </div>
-                      <div class="time pull-right">
-                        <div class="styled-select-time">
-                          <select name="drop-off-time" id="drop-off-time">
-                            <option value="12:00 AM">12:00 AM</option>
-                            <option value="12:30 AM">12:30 AM</option>
-                            <option value="01:00 AM">01:00 AM</option>
-                            <option value="01:30 AM">01:30 AM</option>
-                            <option value="02:00 AM">02:00 AM</option>
-                            <option value="02:30 AM">02:30 AM</option>
-                            <option value="03:00 AM">03:00 AM</option>
-                            <option value="03:30 AM">03:30 AM</option>
-                            <option value="04:00 AM">04:00 AM</option>
-                            <option value="04:30 AM">04:30 AM</option>
-                            <option value="05:00 AM">05:00 AM</option>
-                            <option value="05:30 AM">05:30 AM</option>
-                            <option value="06:00 AM">06:00 AM</option>
-                            <option value="06:30 AM">06:30 AM</option>
-                            <option value="07:00 AM">07:00 AM</option>
-                            <option value="07:30 AM">07:30 AM</option>
-                            <option value="08:00 AM">08:00 AM</option>
-                            <option value="08:30 AM">08:30 AM</option>
-                            <option value="09:00 AM">09:00 AM</option>
-                            <option value="09:30 AM">09:30 AM</option>
-                            <option value="10:00 AM">10:00 AM</option>
-                            <option value="10:30 AM">10:30 AM</option>
-                            <option value="11:00 AM">11:00 AM</option>
-                            <option value="11:30 AM">11:30 AM</option>
-                            <option value="12:00 PM">12:00 PM</option>
-                            <option value="12:30 PM">12:30 PM</option>
-                            <option value="01:00 PM">01:00 PM</option>
-                            <option value="01:30 PM">01:30 PM</option>
-                            <option value="02:00 PM">02:00 PM</option>
-                            <option value="02:30 PM">02:30 PM</option>
-                            <option value="03:00 PM">03:00 PM</option>
-                            <option value="03:30 PM">03:30 PM</option>
-                            <option value="04:00 PM">04:00 PM</option>
-                            <option value="04:30 PM">04:30 PM</option>
-                            <option value="05:00 PM">05:00 PM</option>
-                            <option value="05:30 PM">05:30 PM</option>
-                            <option value="06:00 PM">06:00 PM</option>
-                            <option value="06:30 PM">06:30 PM</option>
-                            <option value="07:00 PM">07:00 PM</option>
-                            <option value="07:30 PM">07:30 PM</option>
-                            <option value="08:00 PM">08:00 PM</option>
-                            <option value="08:30 PM">08:30 PM</option>
-                            <option value="09:00 PM">09:00 PM</option>
-                            <option value="09:30 PM">09:30 PM</option>
-                            <option value="10:00 PM">10:00 PM</option>
-                            <option value="10:30 PM">10:30 PM</option>
-                            <option value="11:00 PM">11:00 PM</option>
-                            <option value="11:30 PM">11:30 PM</option>
-                          </select>
+                          <input type="text" readonly="true" name="tgl_kembali" id="drop-off-date" class="form-control datepicker" placeholder="mm/dd/yyyy">
                         </div>
                       </div>
                       <div class="clearfix"></div>
@@ -999,20 +960,21 @@
             <div class="col-md-8 col-xs-12 pull-left">
               <p class="contact-info">You have any questions or need additional information? <br>
                 <span class="address"><span class="highlight">Address:</span>  Car|Rental / 3861 Sepulveda Blvd. / Culver City, CA 90230</span></p>
-                <form action="#" method="post" id="contact-form" name="contact-form">
+                  <form action="{{route('front.store')}}" method="post" enctype="multipart/form-data">
+      {{csrf_field()}}
                     <input type="hidden" name="action" value="send_contact_form"/>
                     <input type="text" class="website_hp" name="website_hp"/>
 
                   <div class="alert hidden" id="contact-form-msg"></div>
 
                   <div class="form-group">
-                    <input type="text" class="form-control first-name text-field" name="first-name" placeholder="First Name:">
-                    <input type="text" class="form-control last-name text-field" name="last-name" placeholder="Last Name:">
+                    <input type="text" class="form-control first-name text-field" name="nama_p" placeholder="First Name:">
+                    <input type="text" class="form-control last-name text-field" name="nama_a" placeholder="Last Name:">
                     <div class="clearfix"></div>
                   </div>
 
                   <div class="form-group">
-                    <input type="tel" class="form-control telephone text-field" name="telephone" placeholder="Telephone:">
+                    <input type="tel" class="form-control telephone text-field" name="no_hp" placeholder="Telephone:">
                   </div>
 
                   <div class="form-group">
@@ -1064,9 +1026,8 @@
           <div class="modal fade" id="checkoutModal" tabindex="-1" role="dialog" aria-labelledby="checkoutModalLabel" aria-hidden="true" data-backdrop="static">
             <div class="modal-dialog">
               <div class="modal-content">
-                <form action="#" method="post" id="checkout-form" name="checkout-form">
-                    <input type="hidden" name="action" value="send_inquiry_form"/>
-                    <input type="text" class="website_hp" name="website_hp"/>
+                <form action="{{route('front.store')}}" method="post" enctype="multipart/form-data">
+      {{csrf_field()}}
 
                   <!-- Modal header start -->
                   <div class="modal-header">
@@ -1086,41 +1047,56 @@
                     <!-- Checkout Info end -->
 
                     <!-- Checkout Rental Info start -->
+                    <!-- <div class="styled-select-car">
+                        <select name="id_mobil" class="form-control">
+                            <option>Pilih Foto</option>
+                            @foreach($mobil as $data)
+                            <option value="{{ $data->id }}">{{ $data->nama }}</option>
+                            @endforeach
+                        </select>
+                        @if ($errors->has('id_mobil'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('id_mobil') }}</strong>
+                        </span>
+                        @endif
+                    </div> -->
+                    @foreach($mobil as $data)
+                    <input type="hidden" name="id_mobil" value="{{ $data->id }}">
+                    @endforeach
                     <div class="checkout-vehicle-info">
                       <div class="location-date-info">
                         <h3>Location & Date</h3>
                         <div class="info-box">
                           <span class="glyphicon glyphicon-calendar"></span>
                           <h4 class="info-box-title">Pick-Up Time</h4>
-                          <p class="info-box-description"><span id="pick-up-date-ph"></span> at <span id="pick-up-time-ph"></span></p>
-                          <input type="hidden" name="pick-up" id="pick-up" value="">
+                          <p class="info-box-description"><span id="pick-up-date-ph"></span></p>
+                          <input type="hidden" name="tgl_pinjam" id="pick-up" value="">
                         </div>
                         <div class="info-box">
                           <span class="glyphicon glyphicon-calendar"></span>
                           <h4 class="info-box-title">Drop-Off Time</h4>
-                          <p class="info-box-description"><span id="drop-off-date-ph"></span> at <span id="drop-off-time-ph"></span></p>
-                          <input type="hidden" name="drop-off" id="drop-off" value="">
+                          <p class="info-box-description"><span id="drop-off-date-ph"></span></p>
+                          <input type="hidden" name="tgl_kembali" id="drop-off" value="">
                         </div>
                         <div class="info-box">
                           <span class="glyphicon glyphicon-map-marker"></span>
                           <h4 class="info-box-title">Pick-Up Location</h4>
                           <p class="info-box-description" id="pickup-location-ph"></p>
-                          <input type="hidden" name="pickup-location" id="pickup-location" value="">
+                          <input type="hidden" name="jemput_p" id="pickup-location" value="">
                         </div>
                         <div class="info-box">
                           <span class="glyphicon glyphicon-map-marker"></span>
                           <h4 class="info-box-title">Drop-Off Location</h4>
                           <p class="info-box-description" id="dropoff-location-ph"></p>
-                          <input type="hidden" name="dropoff-location" id="dropoff-location" value="">
+                          <input type="hidden" name="jemput_a" id="dropoff-location" value="">
                         </div>
                       </div>
 
                       <div class="vehicle-info">
                         <h3>CAR: <span id="selected-car-ph"></span></h3> <a href="#vehicles" class="scroll-to">[ Vehicle Models ]</a>
-                        <input type="hidden" name="selected-car" id="selected-car" value="">
                         <div class="clearfix"></div>
                         <div class="vehicle-image">
-                          <img class="img-responsive" id="selected-vehicle-image" src="img/vehicle1.jpg" alt="Vehicle">
+                          <img class="img-responsive" id="selected-vehicle-image" src="../img/{{ $data->galeri->foto }}" alt="Vehicle">
                         </div>
                       </div>
 
@@ -1139,146 +1115,46 @@
                       <h3>PERSONAL INFORMATION</h3>
                       <div class="form-group left">
                         <label for="first-name">First Name:</label>
-                        <input type="text" class="form-control" name="first-name" id="first-name" placeholder="Enter your first name">
+                        <input type="text" class="form-control" name="nama_p" id="first_name">
                       </div>
                       <div class="form-group right">
                         <label for="last-name">Last Name:</label>
-                        <input type="text" class="form-control" name="last-name" id="last-name" placeholder="Enter your last name">
+                        <input type="text" class="form-control" name="nama_a" id="last_name">
                       </div>
                       <div class="form-group left">
                         <label for="phone-number">Phone Number:</label>
-                        <input type="text" class="form-control" name="phone-number" id="phone-number" placeholder="Enter your phone number">
+                        <input type="text" class="form-control" name="no_hp" id="phone-number">
                       </div>
-                      <div class="form-group right age">
-                        <label for="age">Age:</label>
-                        <div class="styled-select-age">
-                          <select name="age" id="age">
-                          <option value="18">18</option>
-                           <option value="19">19</option>
-                           <option value="20">20</option>
-                           <option value="21">21</option>
-                           <option value="22">22</option>
-                           <option value="23">23</option>
-                           <option value="24">24</option>
-                           <option value="25">25</option>
-                           <option value="26">26</option>
-                           <option value="27">27</option>
-                           <option value="28">28</option>
-                           <option value="29">29</option>
-                           <option value="30">30</option>
-                           <option value="31">31</option>
-                           <option value="32">32</option>
-                           <option value="33">33</option>
-                           <option value="34">34</option>
-                           <option value="35">35</option>
-                           <option value="36">36</option>
-                           <option value="37">37</option>
-                           <option value="38">38</option>
-                           <option value="39">39</option>
-                           <option value="40">40</option>
-                           <option value="41">41</option>
-                           <option value="42">42</option>
-                           <option value="43">43</option>
-                           <option value="44">44</option>
-                           <option value="45">45</option>
-                           <option value="46">46</option>
-                           <option value="47">47</option>
-                           <option value="48">48</option>
-                           <option value="49">49</option>
-                           <option value="50">50</option>
-                           <option value="51">51</option>
-                           <option value="52">52</option>
-                           <option value="53">53</option>
-                           <option value="54">54</option>
-                           <option value="55">55</option>
-                           <option value="56">56</option>
-                           <option value="57">57</option>
-                           <option value="58">58</option>
-                           <option value="59">59</option>
-                           <option value="50">50</option>
-                           <option value="61">61</option>
-                           <option value="62">62</option>
-                           <option value="63">63</option>
-                           <option value="64">64</option>
-                           <option value="65">65</option>
-                           <option value="66">66</option>
-                           <option value="67">67</option>
-                           <option value="68">68</option>
-                           <option value="69">69</option>
-                           <option value="70">70</option>
-                           <option value="71">71</option>
-                           <option value="72">72</option>
-                           <option value="73">73</option>
-                           <option value="74">74</option>
-                           <option value="75">75</option>
-                           <option value="76">76</option>
-                           <option value="77">77</option>
-                           <option value="78">78</option>
-                           <option value="79">79</option>
-                           <option value="80">80</option>
-                           <option value="81">81</option>
-                           <option value="82">82</option>
-                           <option value="83">83</option>
-                           <option value="84">84</option>
-                           <option value="85">85</option>
-                           <option value="86">86</option>
-                           <option value="87">87</option>
-                           <option value="88">88</option>
-                           <option value="89">89</option>
-                           <option value="90">90</option>
-                           <option value="91">91</option>
-                           <option value="92">92</option>
-                           <option value="93">93</option>
-                           <option value="94">94</option>
-                           <option value="95">95</option>
-                           <option value="96">96</option>
-                           <option value="97">97</option>
-                           <option value="98">98</option>
-                           <option value="99">99</option>
-                           <option value="100">100</option>
-                         </select>
-                       </div>
-                     </div>
-                     <div class="form-group left">
-                      <label for="email-address">Email Address:</label>
-                      <input type="email" class="form-control" name="email-address" id="email-address" placeholder="Enter your email address">
-                    </div>
-                    <div class="form-group right">
-                      <label for="email-address-confirm">Confirm Email Address:</label>
-                      <input type="email" class="form-control" name="email-address-confirm" id="email-address-confirm" placeholder="Confirm your email address">
-                    </div>
-                    <div class="clearfix"></div>
-                  </div>
+                      <div class="form-group left">
+                        <label for="phone-number">Identitas</label>
+                        <input type="text" class="form-control" name="identitas" id="identitas">
+                      </div>
                   <!-- Checkout Personal Info end -->
 
                   <!-- Checkout Address Info start -->
+                  <div class="form-group left {{ $errors->has('id_supir') ? 'has error' : '' }}">
+                        <label class="control-label">Foto</label>
+                        <select name="id_supir" class="form-control">
+                            <option>Pilih Supir</option>
+                            @foreach($supir as $data)
+                            <option value="{{ $data->id }}">{{ $data->nama }}</option>
+                            @endforeach
+                        </select>
+                        @if ($errors->has('id_supir'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('id_supir') }}</strong>
+                        </span>
+                        @endif
+                    </div>
+
                   <div class="checkout-address-info">
                     <div class="form-group address">
                       <label for="address">Address</label>
-                      <input type="text" class="form-control" name="address" id="address" placeholder="Enter your Street an No.">
-                    </div>
-                    <div class="form-group city">
-                      <label for="city">City</label>
-                      <input type="text" class="form-control" name="city" id="city" placeholder="Enter your City">
-                    </div>
-                    <div class="form-group zip-code">
-                      <label for="zip-code">Zip Code</label>
-                      <input type="text" class="form-control" name="zip-code" id="zip-code" placeholder="Enter your Zip Code">
+                      <input type="text" class="form-control" name="alamat" id="address">
                     </div>
                     <div class="clearfix"></div>
                   </div>
                   <!-- Checkout Address Info end -->
-
-                  <div class="newsletter">
-                    <div class="form-group">
-                      <div class="checkbox">
-                        <input id="check1" type="checkbox" name="newsletter" value="yes">
-                        <label for="check1">Please send me latest news and updates</label>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
                 <!-- Modal body end -->
 
                 <!-- Modal footer start -->

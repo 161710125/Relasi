@@ -18,9 +18,6 @@
                                     <a href="{{ route('mobil.index') }}">Mobil</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('customer.index') }}">Customer</a>
-                                </li>
-                                <li>
                                     <a href="{{ route('supir.index') }}">Supir</a>
                                 </li>
                                 <li>

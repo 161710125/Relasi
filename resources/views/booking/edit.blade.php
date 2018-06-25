@@ -57,7 +57,7 @@
 
                     <div class="form-group {{ $errors->has('tgl_pinjam') ? ' has-error' : '' }}">
                         <label class="control-label">Tanggal Pinjam</label>   
-                        <input type="date" name="tgl_pinjam" class="form-control" value="{{ $booking->tgl_pinjam }}"  required>
+                        <input type="date" placeholder="yyyy-mm-dd" name="tgl_pinjam" class="form-control" value="{{ $booking->tgl_pinjam }}"  required>
                         @if ($errors->has('tgl_pinjam'))
                             <span class="help-block">
                                 <strong>{{ $errors->first('tgl_pinjam') }}</strong>
@@ -67,7 +67,7 @@
 
                     <div class="form-group {{ $errors->has('tgl_kembali') ? ' has-error' : '' }}">
                         <label class="control-label">Tanggal Kembali</label>   
-                        <input type="date" name="tgl_kembali" class="form-control" value="{{ $booking->tgl_kembali }}"  required>
+                        <input type="date" placeholder="yyyy-mm-dd" namplaceholder="yyyy-mm-dd"e="tgl_kembali" class="form-control" value="{{ $booking->tgl_kembali }}"  required>
                         @if ($errors->has('tgl_kembali'))
                             <span class="help-block">
                                 <strong>{{ $errors->first('tgl_kembali') }}</strong>

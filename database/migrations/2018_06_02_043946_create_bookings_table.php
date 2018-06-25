@@ -15,8 +15,13 @@ class CreateBookingsTable extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_customer')->unsigned();
-            $table->foreign('id_customer')->references('id')->on('customers')->onUpdate('cascade')->onDelete('cascade');
+            $table->string('nama_p');
+            $table->string('nama_a');
+            $table->string('no_hp');
+            $table->text('alamat');
+            $table->string('jemput_p');
+            $table->string('jemput_a');
+            $table->string('identitas');
             $table->integer('id_mobil')->unsigned();
             $table->foreign('id_mobil')->references('id')->on('mobils')->onUpdate('cascade')->onDelete('cascade');
             $table->integer('id_supir')->unsigned();

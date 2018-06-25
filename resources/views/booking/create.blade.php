@@ -11,18 +11,73 @@
               <div class="panel-body">
                 <form action="{{ route('booking.store') }}" method="post" >
                     {{ csrf_field() }}
-                    <div class="form-group {{ $errors->has('id_customer') ? 'has error' : '' }}">
-                        <label class="control-label">Nama Customer</label>
-                        <select name="id_customer" class="form-control">
-                            <option>Pilih :</option>
-                            @foreach($customer as $data)
-                            <option value="{{ $data->id }}">{{ $data->nama }}</option>
-                            @endforeach
-                        </select>
-                        @if ($errors->has('id_customer'))
-                        <span class="help-block">
-                            <strong>{{ $errors->first('id_customer') }}</strong>
-                        </span>
+                    <div class="form-group {{ $errors->has('nama_p') ? ' has-error' : '' }}">
+                        <label class="control-label">nama_p</label>   
+                        <input type="text" name="nama_p" class="form-control"  required>
+                        @if ($errors->has('nama_p'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('nama_p') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+
+                    <div class="form-group {{ $errors->has('nama_a') ? ' has-error' : '' }}">
+                        <label class="control-label">nama_a</label>   
+                        <input type="text" name="nama_a" class="form-control"  required>
+                        @if ($errors->has('nama_a'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('nama_a') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+
+                    <div class="form-group {{ $errors->has('no_hp') ? ' has-error' : '' }}">
+                        <label class="control-label">no_hp</label>   
+                        <input type="text" name="no_hp" class="form-control"  required>
+                        @if ($errors->has('no_hp'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('no_hp') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+
+                    <div class="form-group {{ $errors->has('alamat') ? ' has-error' : '' }}">
+                        <label class="control-label">alamat</label>   
+                        <input type="text" name="alamat" class="form-control"  required>
+                        @if ($errors->has('alamat'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('alamat') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+
+                    <div class="form-group {{ $errors->has('jemput_p') ? ' has-error' : '' }}">
+                        <label class="control-label">jemput_p</label>   
+                        <input type="text" name="jemput_p" class="form-control"  required>
+                        @if ($errors->has('jemput_p'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('jemput_p') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+
+                    <div class="form-group {{ $errors->has('jemput_a') ? ' has-error' : '' }}">
+                        <label class="control-label">jemput_a</label>   
+                        <input type="text" name="jemput_a" class="form-control"  required>
+                        @if ($errors->has('jemput_a'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('jemput_a') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+
+                    <div class="form-group {{ $errors->has('identitas') ? ' has-error' : '' }}">
+                        <label class="control-label">identitas</label>   
+                        <input type="text" name="identitas" class="form-control"  required>
+                        @if ($errors->has('identitas'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('identitas') }}</strong>
+                            </span>
                         @endif
                     </div>
 
