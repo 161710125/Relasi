@@ -154,7 +154,7 @@
 
                     <div class="alert alert-danger hidden" id="car-select-form-msg">
                       <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                      <strong>Note:</strong> All fields required!
+                      <strong>Note:</strong> Isi Semua Data!
                     </div>
 
                     <!-- Car select start -->
@@ -171,7 +171,7 @@
                     </div> -->
                     <div class="styled-select-car">
                         <select name="id_mobil" class="form-control">
-                            <option>Pilih Foto</option>
+                            <option>Pilih Mobil</option>
                             @foreach($mobil as $data)
                             <option value="{{ $data->id }}">{{ $data->nama }}</option>
                             @endforeach
@@ -187,23 +187,23 @@
                     <!-- Pick-up location start -->
                     <div class="location">
                       <div class="input-group pick-up">
-                        <span class="input-group-addon"><span class="glyphicon glyphicon-map-marker"></span> Pick-up</span>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-map-marker"></span> Titik Jemput</span>
                         <input type="text" name="jemput_p" id="pick-up-location" class="form-control autocomplete-location" placeholder="Enter a City or Airport">
                       </div>
                       <!-- Pick-up location end -->
 
-                      <a class="different-drop-off" href="#">Need a different drop-off location?</a>
+                      <a class="different-drop-off" href="#">Butuh Titik Akhir</a>
 
                       <!-- Drop-off location start -->
                       <div class="input-group drop-off">
-                        <span class="input-group-addon"><span class="glyphicon glyphicon-map-marker"></span> Drop-off</span>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-map-marker"></span> Titik Akhir&nbsp&nbsp&nbsp&nbsp</span>
                         <input type="text" name="jemput_a" id="drop-off-location" class="form-control autocomplete-location" placeholder="Enter a City or Airport">
                       </div>
                     </div>
                     <!-- Drop-off location end -->
 
                     <!-- Pick-up date/time start -->
-                    <div class="datetime pick-up">
+                    <!-- <div class="datetime pick-up">
                       <div class="date pull-left">
                         <div class="input-group">
                           <span class="input-group-addon pixelfix"><span class="glyphicon glyphicon-calendar"></span> Pick-up</span>
@@ -211,11 +211,11 @@
                         </div>
                       </div>
                       <div class="clearfix"></div>
-                    </div>
+                    </div> -->
                     <!-- Pick-up date/time end -->
 
                     <!-- Drop-off date/time start -->
-                    <div class="datetime drop-off">
+                    <!-- <div class="datetime drop-off">
                       <div class="date pull-left">
                         <div class="input-group">
                           <span class="input-group-addon pixelfix"><span class="glyphicon glyphicon-calendar"></span> Drop-off</span>
@@ -223,10 +223,10 @@
                         </div>
                       </div>
                       <div class="clearfix"></div>
-                    </div>
+                    </div> -->
                     <!-- Drop-off date/time end -->
 
-                    <input type="submit" class="submit" name="submit" value="continue car reservation" id="checkoutModalLabel">
+                    <input type="submit" class="submit" name="submit" value="Continue" id="checkoutModalLabel">
                   </form>
 
                 </div>
@@ -1013,7 +1013,7 @@
                     <li><a class="scroll-to" href="#contact">Contact</a></li>
                   </ul>
                   <div class="clearfix"></div>
-                  <p class="copyright">©2014 Themeinjection, All Rights Reserved</p>
+                  <p class="copyright">Powered By ©2014 Themeinjection, Create With <span class="fa fa-heart"></span> by <a href="mailto:muhammad@gemanuryanaagung.today">Muhammad Gema Nuryana Agung</a></p>
                 </div>
               </div>
             </div>
@@ -1032,7 +1032,7 @@
                   <!-- Modal header start -->
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" id="myModalLabel">Complete reservation</h4>
+                    <h4 class="modal-title" id="myModalLabel">Selesaikan Pemesanan</h4>
                   </div>
                   <!-- Modal header end -->
 
@@ -1041,8 +1041,8 @@
 
                     <!-- Checkout Info start -->
                     <div class="checkout-info-box">
-                      <h3><i class="fa fa-info-circle"></i> Upon completing this reservation enquiry, you will receive::</h3>
-                      <p>Your rental voucher to produce on arrival at the rental desk and a toll-free customer support number.</p>
+                      <h3><i class="fa fa-info-circle"></i> Setelah menekan tombol Pesan, anda hanya tinggal menunggu pihak kami menelpon.</h3>
+                      <p>Masukan Semua data dengan benar</p>
                     </div>
                     <!-- Checkout Info end -->
 
@@ -1065,8 +1065,27 @@
                     @endforeach
                     <div class="checkout-vehicle-info">
                       <div class="location-date-info">
-                        <h3>Location & Date</h3>
-                        <div class="info-box">
+                        <h3>Lokasi Dan Tanggal</h3>
+                        <div class="form-group {{ $errors->has('tgl_pinjam') ? ' has-error' : '' }}">
+                       <span class="glyphicon glyphicon-calendar"></span> <label class="control-label">Tanggal Pinjam</label>   
+                        <input type="date" name="tgl_pinjam" class="form-control"  required>
+                        @if ($errors->has('tgl_pinjam'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('tgl_pinjam') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+
+                    <div class="form-group {{ $errors->has('tgl_kembali') ? ' has-error' : '' }}">
+                        <span class="glyphicon glyphicon-calendar"><span> </span><label class="control-label">Tanggal Pinjam</label>  
+                        <input type="date" name="tgl_kembali" class="form-control"  required>
+                        @if ($errors->has('tgl_kembali'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('tgl_kembali') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+                        <!-- <div class="info-box">
                           <span class="glyphicon glyphicon-calendar"></span>
                           <h4 class="info-box-title">Pick-Up Time</h4>
                           <p class="info-box-description"><span id="pick-up-date-ph"></span></p>
@@ -1077,26 +1096,26 @@
                           <h4 class="info-box-title">Drop-Off Time</h4>
                           <p class="info-box-description"><span id="drop-off-date-ph"></span></p>
                           <input type="hidden" name="tgl_kembali" id="drop-off" value="">
-                        </div>
+                        </div> -->
                         <div class="info-box">
                           <span class="glyphicon glyphicon-map-marker"></span>
-                          <h4 class="info-box-title">Pick-Up Location</h4>
+                          <h4 class="info-box-title">Titik Jemput</h4>
                           <p class="info-box-description" id="pickup-location-ph"></p>
                           <input type="hidden" name="jemput_p" id="pickup-location" value="">
                         </div>
                         <div class="info-box">
                           <span class="glyphicon glyphicon-map-marker"></span>
-                          <h4 class="info-box-title">Drop-Off Location</h4>
+                          <h4 class="info-box-title">Titik Akhir</h4>
                           <p class="info-box-description" id="dropoff-location-ph"></p>
                           <input type="hidden" name="jemput_a" id="dropoff-location" value="">
                         </div>
                       </div>
 
                       <div class="vehicle-info">
-                        <h3>CAR: <span id="selected-car-ph"></span></h3> <a href="#vehicles" class="scroll-to">[ Vehicle Models ]</a>
+                        <h3>MOBIL : <span id="selected-car-ph"></span></h3> <a href="#vehicles" class="scroll-to">Jenis Mobil</a>
                         <div class="clearfix"></div>
                         <div class="vehicle-image">
-                          <img class="img-responsive" id="selected-vehicle-image" src="../img/{{ $data->galeri->foto }}" alt="Vehicle">
+                          <img class="img-responsive" id="selected-vehicle-image" src="../img/{{ $data->galeri->foto }} " alt="Vehicle" style="max-height:250px;max-width:300px;margin-top:7px;">
                         </div>
                       </div>
 
@@ -1112,28 +1131,28 @@
                       <div class="alert hidden" id="checkout-form-msg">
                         test
                       </div>
-                      <h3>PERSONAL INFORMATION</h3>
+                      <h3>DATA DIRI</h3>
                       <div class="form-group left">
-                        <label for="first-name">First Name:</label>
+                        <label for="first-name">Nama Pertama:</label>
                         <input type="text" class="form-control" name="nama_p" id="first_name">
                       </div>
                       <div class="form-group right">
-                        <label for="last-name">Last Name:</label>
+                        <label for="last-name">Nama Akhir:</label>
                         <input type="text" class="form-control" name="nama_a" id="last_name">
                       </div>
                       <div class="form-group left">
-                        <label for="phone-number">Phone Number:</label>
+                        <label for="phone-number">Nomor Handphone</label>
                         <input type="text" class="form-control" name="no_hp" id="phone-number">
                       </div>
-                      <div class="form-group left">
+                      <div class="form-group right">
                         <label for="phone-number">Identitas</label>
                         <input type="text" class="form-control" name="identitas" id="identitas">
                       </div>
                   <!-- Checkout Personal Info end -->
 
-                  <!-- Checkout Address Info start -->
+                  <!-- Checkout Supir Info start -->
                   <div class="form-group left {{ $errors->has('id_supir') ? 'has error' : '' }}">
-                        <label class="control-label">Foto</label>
+                        <label for="phone-number">Supir</label>
                         <select name="id_supir" class="form-control">
                             <option>Pilih Supir</option>
                             @foreach($supir as $data)
@@ -1147,10 +1166,9 @@
                         @endif
                     </div>
 
-                  <div class="checkout-address-info">
-                    <div class="form-group address">
-                      <label for="address">Address</label>
-                      <input type="text" class="form-control" name="alamat" id="address">
+                  <div class="form-group right">
+                      <label for="address">Alamat</label>
+                      <input type="text" class="form-control" name="alamat" id="address" placeholder="Jl Cibaduyut No 34">
                     </div>
                     <div class="clearfix"></div>
                   </div>
@@ -1160,10 +1178,10 @@
                 <!-- Modal footer start -->
                 <div class="modal-footer">
                   <span class="btn-border btn-gray">
-                    <button type="button" class="btn btn-default btn-gray" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-default btn-gray" data-dismiss="modal">Batal</button>
                   </span>
                   <span class="btn-border btn-yellow">
-                    <button type="submit" class="btn btn-primary btn-yellow">Reserve now</button>
+                    <button type="submit" class="btn btn-primary btn-yellow">Pesan</button>
                   </span>
                 </div>
                 <!-- Modal footer end -->
