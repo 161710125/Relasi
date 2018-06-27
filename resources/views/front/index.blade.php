@@ -15,6 +15,7 @@
 
   <!-- Google Font Lato -->
   <link href='http://fonts.googleapis.com/css?family=Lato:400,700,900,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="{{ asset('assets/theme/css/font-awesome.min.css') }}">
 
   <!-- Plugin Styles -->
@@ -48,7 +49,7 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ asset('assets/theme/img/ico/apple-touch-icon-114-precomposed.png') }}">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ asset('assets/theme/img/ico/apple-touch-icon-72-precomposed.png') }}">
     <link rel="apple-touch-icon-precomposed" href="{{ asset('assets/theme/img/ico/apple-touch-icon-57-precomposed.png') }}">
-    <link rel="shortcut icon" href="{{ asset('assets/theme/img/ico/favicon.png') }}">
+    <link rel="shortcut icon" href="{{ asset('assets/theme/img/ico/a.jpg') }}">
 
   </head>
   <body id="top" data-spy="scroll" data-target=".navbar" data-offset="260">
@@ -60,7 +61,7 @@
           <div class="col-md-5">
               <!-- Logo start -->
               <div class="brand">
-                  <h1><a class="scroll-to" href="#top"><img class="img-responsive"  src="{{ asset('assets/theme/img/logo.gif') }}" alt="Car|Rental"></a></h1>
+                  <h1><a class="scroll-to" href="#top"><h1>Momobilan</h1></a></h1>
               </div>
               <!-- Logo end -->
           </div>
@@ -68,7 +69,7 @@
           <div class="col-md-7">
               <div class="pull-right">
                   <div class="header-info pull-right">
-                      <div class="contact pull-left">CONTACT: (562) 498-4600</div>
+                      <div class="contact pull-left"> <span class="fa fa-whatsapp" style="color:green"></span> <a href="sms:+6289639301145">+6289639301145</a> <a href="mailto:gemanuryanaagung.today"><i class="fa fa-envelope" aria-hidden="true"></i> Email</a></div>
                   </div>
               </div>
 
@@ -85,7 +86,7 @@
                               <span class="icon-bar"></span>
                               <span class="icon-bar"></span>
                           </button>
-                          <a class="navbar-brand scroll-to" href="#top"><img class="img-responsive"  src="{{ asset('assets/theme/img/logo.gif') }}" alt="Car|Rental"></a>
+                          <a class="navbar-brand scroll-to" href="#top"><img class="img-responsive"  src="{{ asset('assets/theme/img/ico/a.jpg') }}" alt="Momobilan"></a>
                       </div>
                       <!-- Collect the nav links, for toggling -->
                       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -93,7 +94,7 @@
                           <ul class="nav navbar-nav navbar-right">
                               <li class="active"><a href="#top" class="scroll-to">Home</a></li>
                               <li><a href="#services" class="scroll-to">Services</a></li>
-                              <li><a href="#vehicles" class="scroll-to">Vehicle Models</a></li>
+                              <li><a href="#vehicles" class="scroll-to">Mobil</a></li>
                               <li><a href="#locations" class="scroll-to">Locations</a></li>
                               <li><a href="#contact" class="scroll-to">Contact</a></li>
                           </ul>
@@ -119,15 +120,15 @@
               <!-- Wrapper for slides start -->
               <div class="carousel-inner">
                 <div class="item active">
-                  <h1 class="title">Luxury car from from $28 day
-                    <span class="subtitle">Treat yourself in USA</span></h1>
+                  <h1 class="title">
+                    <span class="subtitle"></span></h1>
                     <div class="car-img">
                       <img src="{{ asset('assets/theme/img/car1.png') }}" class="img-responsive" alt="car1">
                     </div>
                   </div>
                   <div class="item">
-                    <h1 class="title">Get 15% off your rental
-                      <span class="subtitle">Plan your trip now</span></h1>
+                    <h1 class="title">
+                      <span class="subtitle"></span></h1>
                       <div class="car-img">
                         <img src="{{ asset('assets/theme/img/car2.png') }}" class="img-responsive" alt="car1">
                       </div>
@@ -188,16 +189,16 @@
                     <div class="location">
                       <div class="input-group pick-up">
                         <span class="input-group-addon"><span class="glyphicon glyphicon-map-marker"></span> Titik Jemput</span>
-                        <input type="text" name="jemput_p" id="pick-up-location" class="form-control autocomplete-location" placeholder="Enter a City or Airport">
+                        <input type="text" name="jemput_p" id="pick-up-location" class="form-control autocomplete-location" placeholder="Jl Cibaduyut No 11">
                       </div>
                       <!-- Pick-up location end -->
 
-                      <a class="different-drop-off" href="#">Butuh Titik Akhir</a>
+                      <a class="different-drop-off" href="#">Butuh Titik Akhir?</a>
 
                       <!-- Drop-off location start -->
                       <div class="input-group drop-off">
                         <span class="input-group-addon"><span class="glyphicon glyphicon-map-marker"></span> Titik Akhir&nbsp&nbsp&nbsp&nbsp</span>
-                        <input type="text" name="jemput_a" id="drop-off-location" class="form-control autocomplete-location" placeholder="Enter a City or Airport">
+                        <input type="text" name="jemput_a" id="drop-off-location" class="form-control autocomplete-location" placeholder="Jl Cibaduyut No 55">
                       </div>
                     </div>
                     <!-- Drop-off location end -->
@@ -244,7 +245,7 @@
         <section id="services" class="container">
           <div class="row">
             <div class="col-md-12 title">
-              <h2>Customer Services</h2>
+              <h2>Orang Menggunakan Momobilan Karena</h2>
               <span class="underline">&nbsp;</span>
             </div>
 
@@ -252,9 +253,9 @@
             <div class="col-md-6">
               <div class="service-box wow fadeInLeft" data-wow-offset="100">
                 <div class="service-icon">+</div>
-                <h3 class="service-title">Special rates on car booking</h3>
+                <h3 class="service-title">Jaminan Harga Terbaik</h3>
                 <div class="clearfix"></div>
-                <p class="service-content">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed  nonumy eirmod tempor invidunt ut labore et dolore magnaed aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.</p>
+                <p class="service-content">Bandingkan seluruh mitra kami untuk mendapatkan harga terbaik di sini.</p>
               </div>
             </div>
             <!-- Service Box end -->
@@ -263,9 +264,9 @@
             <div class="col-md-6">
               <div class="service-box wow fadeInRight" data-wow-offset="100">
                 <div class="service-icon">+</div>
-                <h3 class="service-title">Mobile Phone Reservation</h3>
+                <h3 class="service-title">Konfirmasi Instan</h3>
                 <div class="clearfix"></div>
-                <p class="service-content">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed  nonumy eirmod tempor invidunt ut labore et dolore magnaed aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.</p>
+                <p class="service-content">Pemesanan Anda terjamin & pikiran lebih tenang.<br><br></p>
               </div>
             </div>
             <!-- Service Box end -->
@@ -274,9 +275,9 @@
             <div class="col-md-6">
               <div class="service-box wow fadeInLeft" data-wow-offset="100">
                 <div class="service-icon">+</div>
-                <h3 class="service-title">Unlimited Miles Car Rental</h3>
+                <h3 class="service-title">Jaminan untuk setiap Pemesanan</h3>
                 <div class="clearfix"></div>
-                <p class="service-content">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed  nonumy eirmod tempor invidunt ut labore et dolore magnaed aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.</p>
+                <p class="service-content">Kami memantau setiap pemesanan untuk memastikan Anda mendapatkan mobil yang Anda pilih atau setara.</p>
               </div>
             </div>
             <!-- Service Box end -->
@@ -285,9 +286,9 @@
             <div class="col-md-6">
               <div class="service-box wow fadeInRight" data-wow-offset="100">
                 <div class="service-icon">+</div>
-                <h3 class="service-title">One Way Car Rentals</h3>
+                <h3 class="service-title">Terpercaya & Kualitas Tinggi</h3>
                 <div class="clearfix"></div>
-                <p class="service-content">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed  nonumy eirmod tempor invidunt ut labore et dolore magnaed aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.</p>
+                <p class="service-content">Kendaraan yang tidak bermasalah dan karyawan supir yang dapat dipercaya.<br><br></p>
               </div>
             </div>
             <!-- Service Box end -->
@@ -304,33 +305,11 @@
               </div>
 
               <!-- Vehicle nav start -->
+              
               <div class="col-md-3 vehicle-nav-row wow fadeInUp" data-wow-offset="100">
                 <div id="vehicle-nav-container">
                   <ul class="vehicle-nav">
-                      <li class="active"><a href="#vehicle-1">VW Golf VII</a><span class="active">&nbsp;</span></li>
-                      <li><a href="#vehicle-2">Audi A1 S-LINE</a><span class="active">&nbsp;</span></li>
-                      <li><a href="#vehicle-3">Toyota Camry</a><span class="active">&nbsp;</span></li>
-                      <li><a href="#vehicle-4">BMW 320 ModernLine</a><span class="active">&nbsp;</span></li>
-                      <li><a href="#vehicle-5">Mercedes-Benz GLK</a><span class="active">&nbsp;</span></li>
-                      <li><a href="#vehicle-6">VW Passat CC</a><span class="active">&nbsp;</span></li>
-
-                      <li><a href="#vehicle-7">Audi A1 S-LINE</a><span class="active">&nbsp;</span></li>
-                      <li><a href="#vehicle-8">Toyota Camry</a><span class="active">&nbsp;</span></li>
-                      <li><a href="#vehicle-9">BMW 320 ModernLine</a><span class="active">&nbsp;</span></li>
-                      <li><a href="#vehicle-10">Mercedes-Benz GLK</a><span class="active">&nbsp;</span></li>
-                      <li><a href="#vehicle-11">VW Passat CC</a><span class="active">&nbsp;</span></li>
-
-                      <li><a href="#vehicle-7">Audi A1 S-LINE 12</a><span class="active">&nbsp;</span></li>
-                      <li><a href="#vehicle-8">Toyota Camry 13</a><span class="active">&nbsp;</span></li>
-                      <li><a href="#vehicle-9">BMW 320 ModernLine 14</a><span class="active">&nbsp;</span></li>
-                      <li><a href="#vehicle-10">Mercedes-Benz GLK 15</a><span class="active">&nbsp;</span></li>
-                      <li><a href="#vehicle-11">VW Passat CC 16</a><span class="active">&nbsp;</span></li>
-
-                      <li><a href="#vehicle-7">Audi A1 S-LINE</a><span class="active">&nbsp;</span></li>
-                      <li><a href="#vehicle-8">Toyota Camry</a><span class="active">&nbsp;</span></li>
-                      <li><a href="#vehicle-9">BMW 320 ModernLine</a><span class="active">&nbsp;</span></li>
-                      <li><a href="#vehicle-10">Mercedes-Benz GLK</a><span class="active">&nbsp;</span></li>
-                      <li><a href="#vehicle-11">VW Passat CC</a><span class="active">&nbsp;</span></li>
+                      <li class="active"><a href="#vehicle-1">Mobil 1</a><span class="active">&nbsp;</span></li>
                   </ul>
                 </div>
 
@@ -343,6 +322,7 @@
               <!-- Vehicle nav end -->
 
               <!-- Vehicle 1 data start -->
+              @foreach ($mobil as $data)
               <div class="vehicle-data" id="vehicle-1">
                 <div class="col-md-6 wow fadeIn" data-wow-offset="100">
                   <div class="vehicle-img">
@@ -350,481 +330,30 @@
                   </div>
                 </div>
                 <div class="col-md-3 wow fadeInUp" data-wow-offset="200">
-                  <div class="vehicle-price">$ 37.40 <span class="info">rent per day</span></div>
+                  <div class="vehicle-price">RP. {{$data->harga}} <span class="info">per hari</span></div>
                   <table class="table vehicle-features">
                     <tr>
-                      <td>Model</td>
-                      <td>Limousine</td>
+                      <td>Merk</td>
+                      <td>{{$data->merk}}</td>
                     </tr>
                     <tr>
-                      <td>Doors</td>
-                      <td>4</td>
+                      <td>Kapasitas</td>
+                      <td>{{$data->kapasitas}}</td>
                     </tr>
                     <tr>
-                      <td>Seats</td>
-                      <td>5</td>
+                      <td>Tahun Keluaran</td>
+                      <td>{{$data->tahun_kel}}</td>
                     </tr>
                     <tr>
-                      <td>Luggage</td>
-                      <td>2 Suitcases / 2 Bags</td>
-                    </tr>
-                    <tr>
-                      <td>Transmission</td>
-                      <td>Automatic</td>
-                    </tr>
-                    <tr>
-                      <td>Air conditioning</td>
-                      <td>Yes</td>
-                    </tr>
-                    <tr>
-                      <td>Minimum age</td>
-                      <td>25 years</td>
+                      <td>Plat Nomor</td>
+                      <td>{{$data->plat_no}}</td>
                     </tr>
                   </table>
-                  <a href="#teaser" class="reserve-button scroll-to"><span class="glyphicon glyphicon-calendar"></span> Reserve now</a>
+                  <a href="#teaser" class="reserve-button scroll-to"><span class="glyphicon glyphicon-calendar"></span> Booking Sekarang</a>
                 </div>
               </div>
+              @endforeach
               <!-- Vehicle 1 data end -->
-
-              <!-- Vehicle 2 data start -->
-              <div class="vehicle-data" id="vehicle-2">
-                <div class="col-md-6" data-wow-offset="200">
-                  <div class="vehicle-img">
-                    <img class="img-responsive" src="img/vehicle2.jpg" alt="Vehicle">
-                  </div>
-                </div>
-                <div class="col-md-3" data-wow-offset="200">
-                  <div class="vehicle-price">$ 70.40 <span class="info">rent per day</span></div>
-                  <table class="table vehicle-features">
-                    <tr>
-                      <td>Model</td>
-                      <td>Limousine</td>
-                    </tr>
-                    <tr>
-                      <td>Doors</td>
-                      <td>4</td>
-                    </tr>
-                    <tr>
-                      <td>Seats</td>
-                      <td>5</td>
-                    </tr>
-                    <tr>
-                      <td>Luggage</td>
-                      <td>2 Suitcases / 2 Bags</td>
-                    </tr>
-                    <tr>
-                      <td>Transmission</td>
-                      <td>Automatic</td>
-                    </tr>
-                    <tr>
-                      <td>Air conditioning</td>
-                      <td>Yes</td>
-                    </tr>
-                    <tr>
-                      <td>Minimum age</td>
-                      <td>25 years</td>
-                    </tr>
-                  </table>
-                  <a href="#teaser" class="reserve-button scroll-to"><span class="glyphicon glyphicon-calendar"></span> Reserve now</a>
-                </div>
-              </div>
-              <!-- Vehicle 2 data end -->
-
-              <!-- Vehicle 3 data start -->
-              <div class="vehicle-data" id="vehicle-3">
-                <div class="col-md-6" data-wow-offset="200">
-                  <div class="vehicle-img">
-                    <img class="img-responsive" src="img/vehicle3.jpg" alt="Vehicle">
-                  </div>
-                </div>
-                <div class="col-md-3" data-wow-offset="200">
-                  <div class="vehicle-price">$ 100.40 <span class="info">rent per day</span></div>
-                  <table class="table vehicle-features">
-                    <tr>
-                      <td>Model</td>
-                      <td>Limousine</td>
-                    </tr>
-                    <tr>
-                      <td>Doors</td>
-                      <td>4</td>
-                    </tr>
-                    <tr>
-                      <td>Seats</td>
-                      <td>5</td>
-                    </tr>
-                    <tr>
-                      <td>Luggage</td>
-                      <td>2 Suitcases / 2 Bags</td>
-                    </tr>
-                    <tr>
-                      <td>Transmission</td>
-                      <td>Automatic</td>
-                    </tr>
-                    <tr>
-                      <td>Air conditioning</td>
-                      <td>Yes</td>
-                    </tr>
-                    <tr>
-                      <td>Minimum age</td>
-                      <td>25 years</td>
-                    </tr>
-                  </table>
-                  <a href="#teaser" class="reserve-button scroll-to"><span class="glyphicon glyphicon-calendar"></span> Reserve now</a>
-                </div>
-              </div>
-              <!-- Vehicle 3 data end -->
-
-              <!-- Vehicle 4 data start -->
-              <div class="vehicle-data" id="vehicle-4">
-                <div class="col-md-6" data-wow-offset="200">
-                  <div class="vehicle-img">
-                    <img class="img-responsive" src="img/vehicle4.jpg" alt="Vehicle">
-                  </div>
-                </div>
-                <div class="col-md-3" data-wow-offset="200">
-                  <div class="vehicle-price">$ 100.40 <span class="info">rent per day</span></div>
-                  <table class="table vehicle-features">
-                    <tr>
-                      <td>Model</td>
-                      <td>Limousine</td>
-                    </tr>
-                    <tr>
-                      <td>Doors</td>
-                      <td>4</td>
-                    </tr>
-                    <tr>
-                      <td>Seats</td>
-                      <td>5</td>
-                    </tr>
-                    <tr>
-                      <td>Luggage</td>
-                      <td>2 Suitcases / 2 Bags</td>
-                    </tr>
-                    <tr>
-                      <td>Transmission</td>
-                      <td>Automatic</td>
-                    </tr>
-                    <tr>
-                      <td>Air conditioning</td>
-                      <td>Yes</td>
-                    </tr>
-                    <tr>
-                      <td>Minimum age</td>
-                      <td>25 years</td>
-                    </tr>
-                  </table>
-                  <a href="#teaser" class="reserve-button scroll-to"><span class="glyphicon glyphicon-calendar"></span> Reserve now</a>
-                </div>
-              </div>
-              <!-- Vehicle 4 data end -->
-
-              <!-- Vehicle 5 data start -->
-              <div class="vehicle-data" id="vehicle-5">
-                <div class="col-md-6" data-wow-offset="200">
-                  <div class="vehicle-img">
-                    <img class="img-responsive" src="img/vehicle5.jpg" alt="Vehicle">
-                  </div>
-                </div>
-                <div class="col-md-3" data-wow-offset="200">
-                  <div class="vehicle-price">$ 100.40 <span class="info">rent per day</span></div>
-                  <table class="table vehicle-features">
-                    <tr>
-                      <td>Model</td>
-                      <td>Limousine</td>
-                    </tr>
-                    <tr>
-                      <td>Doors</td>
-                      <td>4</td>
-                    </tr>
-                    <tr>
-                      <td>Seats</td>
-                      <td>5</td>
-                    </tr>
-                    <tr>
-                      <td>Luggage</td>
-                      <td>2 Suitcases / 2 Bags</td>
-                    </tr>
-                    <tr>
-                      <td>Transmission</td>
-                      <td>Automatic</td>
-                    </tr>
-                    <tr>
-                      <td>Air conditioning</td>
-                      <td>Yes</td>
-                    </tr>
-                    <tr>
-                      <td>Minimum age</td>
-                      <td>25 years</td>
-                    </tr>
-                  </table>
-                  <a href="#teaser" class="reserve-button scroll-to"><span class="glyphicon glyphicon-calendar"></span> Reserve now</a>
-                </div>
-              </div>
-              <!-- Vehicle 5 data end -->
-
-              <!-- Vehicle 6 data start -->
-              <div class="vehicle-data" id="vehicle-6">
-                <div class="col-md-6" data-wow-offset="200">
-                  <div class="vehicle-img">
-                    <img class="img-responsive" src="img/vehicle6.jpg" alt="Vehicle">
-                  </div>
-                </div>
-                <div class="col-md-3" data-wow-offset="200">
-                  <div class="vehicle-price">$ 100.40 <span class="info">rent per day</span></div>
-                  <table class="table vehicle-features">
-                    <tr>
-                      <td>Model</td>
-                      <td>Limousine</td>
-                    </tr>
-                    <tr>
-                      <td>Doors</td>
-                      <td>4</td>
-                    </tr>
-                    <tr>
-                      <td>Seats</td>
-                      <td>5</td>
-                    </tr>
-                    <tr>
-                      <td>Luggage</td>
-                      <td>2 Suitcases / 2 Bags</td>
-                    </tr>
-                    <tr>
-                      <td>Transmission</td>
-                      <td>Automatic</td>
-                    </tr>
-                    <tr>
-                      <td>Air conditioning</td>
-                      <td>Yes</td>
-                    </tr>
-                    <tr>
-                      <td>Minimum age</td>
-                      <td>25 years</td>
-                    </tr>
-                  </table>
-                  <a href="#teaser" class="reserve-button scroll-to"><span class="glyphicon glyphicon-calendar"></span> Reserve now</a>
-                </div>
-              </div>
-              <!-- Vehicle 6 data end -->
-
-                <!-- Vehicle 7 data start -->
-                <div class="vehicle-data" id="vehicle-7">
-                    <div class="col-md-6" data-wow-offset="200">
-                        <div class="vehicle-img">
-                            <img class="img-responsive" src="img/vehicle2.jpg" alt="Vehicle">
-                        </div>
-                    </div>
-                    <div class="col-md-3" data-wow-offset="200">
-                        <div class="vehicle-price">$ 70.40 <span class="info">rent per day</span></div>
-                        <table class="table vehicle-features">
-                            <tr>
-                                <td>Model</td>
-                                <td>Limousine</td>
-                            </tr>
-                            <tr>
-                                <td>Doors</td>
-                                <td>4</td>
-                            </tr>
-                            <tr>
-                                <td>Seats</td>
-                                <td>5</td>
-                            </tr>
-                            <tr>
-                                <td>Luggage</td>
-                                <td>2 Suitcases / 2 Bags</td>
-                            </tr>
-                            <tr>
-                                <td>Transmission</td>
-                                <td>Automatic</td>
-                            </tr>
-                            <tr>
-                                <td>Air conditioning</td>
-                                <td>Yes</td>
-                            </tr>
-                            <tr>
-                                <td>Minimum age</td>
-                                <td>25 years</td>
-                            </tr>
-                        </table>
-                        <a href="#teaser" class="reserve-button scroll-to"><span class="glyphicon glyphicon-calendar"></span> Reserve now</a>
-                    </div>
-                </div>
-                <!-- Vehicle 7 data end -->
-
-                <!-- Vehicle 8 data start -->
-                <div class="vehicle-data" id="vehicle-8">
-                    <div class="col-md-6" data-wow-offset="200">
-                        <div class="vehicle-img">
-                            <img class="img-responsive" src="img/vehicle3.jpg" alt="Vehicle">
-                        </div>
-                    </div>
-                    <div class="col-md-3" data-wow-offset="200">
-                        <div class="vehicle-price">$ 100.40 <span class="info">rent per day</span></div>
-                        <table class="table vehicle-features">
-                            <tr>
-                                <td>Model</td>
-                                <td>Limousine</td>
-                            </tr>
-                            <tr>
-                                <td>Doors</td>
-                                <td>4</td>
-                            </tr>
-                            <tr>
-                                <td>Seats</td>
-                                <td>5</td>
-                            </tr>
-                            <tr>
-                                <td>Luggage</td>
-                                <td>2 Suitcases / 2 Bags</td>
-                            </tr>
-                            <tr>
-                                <td>Transmission</td>
-                                <td>Automatic</td>
-                            </tr>
-                            <tr>
-                                <td>Air conditioning</td>
-                                <td>Yes</td>
-                            </tr>
-                            <tr>
-                                <td>Minimum age</td>
-                                <td>25 years</td>
-                            </tr>
-                        </table>
-                        <a href="#teaser" class="reserve-button scroll-to"><span class="glyphicon glyphicon-calendar"></span> Reserve now</a>
-                    </div>
-                </div>
-                <!-- Vehicle 8 data end -->
-
-                <!-- Vehicle 9 data start -->
-                <div class="vehicle-data" id="vehicle-9">
-                    <div class="col-md-6" data-wow-offset="200">
-                        <div class="vehicle-img">
-                            <img class="img-responsive" src="img/vehicle4.jpg" alt="Vehicle">
-                        </div>
-                    </div>
-                    <div class="col-md-3" data-wow-offset="200">
-                        <div class="vehicle-price">$ 100.40 <span class="info">rent per day</span></div>
-                        <table class="table vehicle-features">
-                            <tr>
-                                <td>Model</td>
-                                <td>Limousine</td>
-                            </tr>
-                            <tr>
-                                <td>Doors</td>
-                                <td>4</td>
-                            </tr>
-                            <tr>
-                                <td>Seats</td>
-                                <td>5</td>
-                            </tr>
-                            <tr>
-                                <td>Luggage</td>
-                                <td>2 Suitcases / 2 Bags</td>
-                            </tr>
-                            <tr>
-                                <td>Transmission</td>
-                                <td>Automatic</td>
-                            </tr>
-                            <tr>
-                                <td>Air conditioning</td>
-                                <td>Yes</td>
-                            </tr>
-                            <tr>
-                                <td>Minimum age</td>
-                                <td>25 years</td>
-                            </tr>
-                        </table>
-                        <a href="#teaser" class="reserve-button scroll-to"><span class="glyphicon glyphicon-calendar"></span> Reserve now</a>
-                    </div>
-                </div>
-                <!-- Vehicle 9 data end -->
-
-                <!-- Vehicle 10 data start -->
-                <div class="vehicle-data" id="vehicle-10">
-                    <div class="col-md-6" data-wow-offset="200">
-                        <div class="vehicle-img">
-                            <img class="img-responsive" src="img/vehicle5.jpg" alt="Vehicle">
-                        </div>
-                    </div>
-                    <div class="col-md-3" data-wow-offset="200">
-                        <div class="vehicle-price">$ 100.40 <span class="info">rent per day</span></div>
-                        <table class="table vehicle-features">
-                            <tr>
-                                <td>Model</td>
-                                <td>Limousine</td>
-                            </tr>
-                            <tr>
-                                <td>Doors</td>
-                                <td>4</td>
-                            </tr>
-                            <tr>
-                                <td>Seats</td>
-                                <td>5</td>
-                            </tr>
-                            <tr>
-                                <td>Luggage</td>
-                                <td>2 Suitcases / 2 Bags</td>
-                            </tr>
-                            <tr>
-                                <td>Transmission</td>
-                                <td>Automatic</td>
-                            </tr>
-                            <tr>
-                                <td>Air conditioning</td>
-                                <td>Yes</td>
-                            </tr>
-                            <tr>
-                                <td>Minimum age</td>
-                                <td>25 years</td>
-                            </tr>
-                        </table>
-                        <a href="#teaser" class="reserve-button scroll-to"><span class="glyphicon glyphicon-calendar"></span> Reserve now</a>
-                    </div>
-                </div>
-                <!-- Vehicle 10 data end -->
-
-                <!-- Vehicle 11 data start -->
-                <div class="vehicle-data" id="vehicle-11">
-                    <div class="col-md-6" data-wow-offset="200">
-                        <div class="vehicle-img">
-                            <img class="img-responsive" src="img/vehicle6.jpg" alt="Vehicle">
-                        </div>
-                    </div>
-                    <div class="col-md-3" data-wow-offset="200">
-                        <div class="vehicle-price">$ 100.40 <span class="info">rent per day</span></div>
-                        <table class="table vehicle-features">
-                            <tr>
-                                <td>Model</td>
-                                <td>Limousine</td>
-                            </tr>
-                            <tr>
-                                <td>Doors</td>
-                                <td>4</td>
-                            </tr>
-                            <tr>
-                                <td>Seats</td>
-                                <td>5</td>
-                            </tr>
-                            <tr>
-                                <td>Luggage</td>
-                                <td>2 Suitcases / 2 Bags</td>
-                            </tr>
-                            <tr>
-                                <td>Transmission</td>
-                                <td>Automatic</td>
-                            </tr>
-                            <tr>
-                                <td>Air conditioning</td>
-                                <td>Yes</td>
-                            </tr>
-                            <tr>
-                                <td>Minimum age</td>
-                                <td>25 years</td>
-                            </tr>
-                        </table>
-                        <a href="#teaser" class="reserve-button scroll-to"><span class="glyphicon glyphicon-calendar"></span> Reserve now</a>
-                    </div>
-                </div>
-                <!-- Vehicle 11 data end -->
 
             </div>
           </section>
@@ -871,7 +400,7 @@
                   <!-- Review item 3 start -->
                   <div class="item">
                     <div class="review">
-                      This was my first time renting from car|rental. And over all it was a wonderful experience I have no complaints. The service rep help me find the best rental to suit my needs. I also love the fact that you guys provide luxury rentals at a great price. I will definitely rent with this company again.
+                      This was my first time renting from Momobilan. And over all it was a wonderful experience I have no complaints. The service rep help me find the best rental to suit my needs. I also love the fact that you guys provide luxury rentals at a great price. I will definitely rent with this company again.
                     </div>
                     <div class="author">
                       – Michael Smith, Santa Barbara CA
@@ -905,7 +434,7 @@
                 <div class="location-select">
                   <div class="row">
                     <div class="col-md-6">
-                      <h2>Car Rental Locations</h2>
+                      <h2>Lokasi Momobilan</h2>
                     </div>
                     <div class="col-md-6">
                       <div class="styled-select-location">
@@ -926,7 +455,7 @@
         <section id="contact" class="container wow bounceInUp" data-wow-offset="50">
           <div class="row">
             <div class="col-md-12">
-              <h2>Contact Us</h2>
+              <h2>Hubungi Kami</h2>
             </div>
             <div class="col-md-4 col-xs-12 pull-right">
               <h4 class="contact-box-title">Customer Center</h4>
@@ -940,7 +469,7 @@
 
               <div class="contact-box-divider">&nbsp;</div>
 
-              <h4 class="contact-box-title">Change or Cancel Reservation</h4>
+              <h4 class="contact-box-title">Pembatalan atau Perubahan jadwal</h4>
               <div class="contact-box">
                 <div class="contact-box-name">Mike Smith</div>
                 <div class="contact-box-phon"><span class="highlight">Phone:</span> 666-999-888</div>
@@ -958,8 +487,8 @@
               <div class="contact-box-border">&nbsp;</div>
             </div>
             <div class="col-md-8 col-xs-12 pull-left">
-              <p class="contact-info">You have any questions or need additional information? <br>
-                <span class="address"><span class="highlight">Address:</span>  Car|Rental / 3861 Sepulveda Blvd. / Culver City, CA 90230</span></p>
+              <p class="contact-info">Butuh Sesuatu yang lain, datangi alamat kami di <br>
+                <span class="address"><span class="highlight">Alamat:</span>  Momobilan / Jalan Terate 2 no 69 / Bandung, Jawa Barat 40238</span></p>
                   <form action="{{route('front.store')}}" method="post" enctype="multipart/form-data">
       {{csrf_field()}}
                     <input type="hidden" name="action" value="send_contact_form"/>
@@ -1006,14 +535,13 @@
                 <div class="col-md-12 text-center">
                   <ul class="footer-nav">
                     <li><a class="scroll-to" href="#top">Home</a></li>
-                    <li><a class="scroll-to" href="#services">Service</a></li>
-                    <li><a class="scroll-to" href="#vehicles">Vehicle Models</a></li>
+                    <li><a class="scroll-to" href="#vehicles">Mobil</a></li>
                     <li><a class="scroll-to" href="#reviews">Reviews</a></li>
-                    <li><a class="scroll-to" href="#locations">Locations</a></li>
-                    <li><a class="scroll-to" href="#contact">Contact</a></li>
+                    <li><a class="scroll-to" href="#locations">Lokasi</a></li>
+                    <li><a class="scroll-to" href="#contact">Kontak</a></li>
                   </ul>
                   <div class="clearfix"></div>
-                  <p class="copyright">Powered By ©2014 Themeinjection, Create With <span class="fa fa-heart"></span> by <a href="mailto:muhammad@gemanuryanaagung.today">Muhammad Gema Nuryana Agung</a></p>
+                  <p class="copyright">Powered By ©2014 Themeinjection, Create and Edit With <span class="fa fa-heart"></span> by <a href="mailto:muhammad@gemanuryanaagung.today">Muhammad Gema Nuryana Agung</a></p>
                 </div>
               </div>
             </div>
@@ -1077,11 +605,11 @@
                     </div>
 
                     <div class="form-group {{ $errors->has('tgl_kembali') ? ' has-error' : '' }}">
-                        <span class="glyphicon glyphicon-calendar"><span> </span><label class="control-label">Tanggal Pinjam</label>  
-                        <input type="date" name="tgl_kembali" class="form-control"  required>
-                        @if ($errors->has('tgl_kembali'))
+                       <span class="glyphicon glyphicon-calendar"></span> <label class="control-label">Tanggal Kembali</label>   
+                        <input type="date" name="tgl kembali" class="form-control"  required>
+                        @if ($errors->has('tgl kembali'))
                             <span class="help-block">
-                                <strong>{{ $errors->first('tgl_kembali') }}</strong>
+                                <strong>{{ $errors->first('tgl kembali') }}</strong>
                             </span>
                         @endif
                     </div>
@@ -1115,7 +643,7 @@
                         <h3>MOBIL : <span id="selected-car-ph"></span></h3> <a href="#vehicles" class="scroll-to">Jenis Mobil</a>
                         <div class="clearfix"></div>
                         <div class="vehicle-image">
-                          <img class="img-responsive" id="selected-vehicle-image" src="../img/{{ $data->galeri->foto }} " alt="Vehicle" style="max-height:250px;max-width:300px;margin-top:7px;">
+                          <img class="img-responsive" id="selected-vehicle-image" src="{{ asset('/img/'.$data->galeri->foto) }} " alt="Vehicle" style="max-height:250px;max-width:300px;margin-top:7px;">
                         </div>
                       </div>
 
@@ -1134,19 +662,19 @@
                       <h3>DATA DIRI</h3>
                       <div class="form-group left">
                         <label for="first-name">Nama Pertama:</label>
-                        <input type="text" class="form-control" name="nama_p" id="first_name">
+                        <input type="text" class="form-control" name="nama_p" id="first_name" placeholder="Jajang">
                       </div>
                       <div class="form-group right">
                         <label for="last-name">Nama Akhir:</label>
-                        <input type="text" class="form-control" name="nama_a" id="last_name">
+                        <input type="text" class="form-control" name="nama_a" id="last_name" placeholder="Sopana">
                       </div>
                       <div class="form-group left">
                         <label for="phone-number">Nomor Handphone</label>
-                        <input type="text" class="form-control" name="no_hp" id="phone-number">
+                        <input type="text" class="form-control" name="no_hp" id="phone-number" placeholder="+62xxxxxxxxxx">
                       </div>
                       <div class="form-group right">
                         <label for="phone-number">Identitas</label>
-                        <input type="text" class="form-control" name="identitas" id="identitas">
+                        <input type="text" class="form-control" name="identitas" id="identitas" placeholder="1000xxxxxxxxx">
                       </div>
                   <!-- Checkout Personal Info end -->
 

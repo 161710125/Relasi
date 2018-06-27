@@ -65,10 +65,8 @@ class FrontendController extends Controller
         $front->id_supir = $request->id_supir;
         $front->tgl_pinjam = $request->tgl_pinjam;
         $front->tgl_kembali = $request->tgl_kembali;
-        $mobil = mobil::all();
-        $mobilselect = booking::findOrFail($booking->id)->id_mobil;
         $front->save();
-        return redirect()->route('front.index',compact('mobilselect'));
+        return redirect()->route('front.index');
     }
 
     /**

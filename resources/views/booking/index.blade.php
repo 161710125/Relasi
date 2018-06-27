@@ -16,6 +16,7 @@
 			  		<tr>
 			  		  <th>No</th>
 					  <th>Nama</th>
+					  <th>Nomor Handphone</th>
 					  <th>Alamat</th>
 					  <th>Identitas</th>
 					  <th>Mobil</th>
@@ -39,7 +40,6 @@
 						<td>{{ $data->tgl_pinjam}}</td>
 						<td>{{ $data->tgl_kembali}}</td>
 						<td>
-							<a class="btn btn-warning" href="{{ route('booking.edit',$data->id) }}">Ubah</a>
 						</td>
 						<td>
 							<form method="post" action="{{ route('booking.destroy',$data->id) }}">

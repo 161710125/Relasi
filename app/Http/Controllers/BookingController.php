@@ -116,7 +116,7 @@ class BookingController extends Controller
      * @param  \App\booking  $booking
      * @return \Illuminate\Http\Response
      */
-    public function destroy(booking $booking)
+    public function destroy($id)
     {
         $booking =booking::findOrFail($id);
         $booking->delete();
